@@ -1,0 +1,1 @@
+La totalidad del material educativo publicado, tanto gráfico como escrito se encuentra bajo la licencia Creative Commonse CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/ . El código publicado en este repositorio se encuentra bajo la licencia GPL versión 3, https://www.gnu.org/licenses/gpl-3.0.en.html 
