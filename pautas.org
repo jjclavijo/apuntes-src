@@ -1,0 +1,332 @@
+#+TITLE: Elaboración de informes
+
+* Pautas para la elaboración de informes
+
+Este documento pretende ser una guía sencilla de estilo sobre la elaboración de 
+informes. Pedimos que la misma sea considerada a la hora de elaborar los 
+trabajos prácticos de la materia, de manera que se facilite la comprensión tanto
+del trabajo por parte del docente como de las correcciones posteriores por parte
+del alumno.
+
+* Sobre el estilo de escritura: El arte de la prosa.
+
+El principal componente de todo informe es la escritura en prosa, a partir de
+la que se desarrollan los conceptos que se quieren transmitir.
+
+Definimos la prosa como "Forma de expresión habitual, oral o escrita, 
+no sujeta a las reglas del verso." [fn:1]. Sin embrago, se debe tener en cuenta que
+la escritura en prosa no carece de reglas. Mas allá de las reglas ortográficas y
+gramaticales, para que la transmisión de conceptos se desarrolle en forma eficiente
+debemos aplicar lo que se conoce como reglas de estilo.
+
+Antes de pasar a detallar las reglas de estilo que nos parecen importantes, hacemos 
+notar que a la prosa también la definimos coloquialmente como "Demasía de palabras para 
+decir cosas poco o nada importantes." [fn:2]. Mencionamos esto porque es precisamente
+lo que queremos evitar.
+
+** Regla 1: Uso de los Tiempos Verbales
+   
+Durante la elaboración de un informe técnico, debemos conservar una coherencia en el
+uso de los tiempos verbales. 
+
+Los informes están relacionados en general a trabajos que ya fueron realizados, por lo 
+tanto corresponde utilizar tiempos verbales pretéritos, conjugados en primera persona
+del singular o del plural, dependiendo el caso.
+
+En algunas circunstancias suele interrumpirse el discurso con alguna oración o sección
+escrita utilizando el tiempo presente, para remarcar ideas o conceptos que no son particulares
+al trabajo descrito sino que aclaran conceptos que subyacen detrás del mismo, por ejemplo:
+
+---- ejemplo
+
+"Realizamos la transformación de coordenadas utilizando una transformación de siete parámetros. 
+esta transformación *se define* como [...]"
+
+---- ejemplo
+
+Es de suma importancia mantener la coherencia a lo largo de todo el trabajo, repitiendo
+el mismo de tipo de conjugación en todos los segmentos del texto que describan conceptos
+de naturaleza similar.
+
+Alternativamente, en caso de dividir el texto en secciones bien delimitadas, puede ser natural
+utilizar tiempos verbales diferentes en secciones diferentes. 
+
+A modo de ejemplo, supongamos un texto que tiene una sección de metodología, una sección de 
+resultados y una sección de conclusiones. Es natural en este caso que la primera se escriba 
+en tiempo futuro, describiendo como *se desarrollará* el trabajo. Asimismo, la segunda sección
+probablemente esté escrita en tiempo pretérito, explicando cual *fue* el resultado al llevar
+a la practica la metodología descripta. Finalmente, las conclusiones pueden desarrollarse en 
+tiempo presente, expresando las ideas que el autor *actualmente* tiene, luego de haber realizado
+el trabajo.
+
+** Regla 2: Uso de los Modos del discurso
+
+---- derecha
+
+Indicativo:
+
+Se *tuvo* en cuenta en este trabajo el achatamiento terrestre.
+
+Subjuntivo:
+
+La presición de este trabajo *mejoraría* si se tuviera en cuenta el achatamiento terrestre.
+
+Imperativo:
+
+Para hacer este calculo se *debe* tener en cuenta el achatamiento terrestre.
+
+---- derecha
+
+Los modos del discurso son las formas en las que se construye una oración para expresar una idea.
+
+Es importante que tengamos esto en cuenta a la hora de presentar un informe, porque cada modo
+indica una relación particular entre el hablante y la idea que desarrolla.
+
+Escribiremos utilizando modo indicativo aquellos conceptos que presentamos como hechos reales o
+ideas ciertas.
+Utilizaremos el modo subjuntivo en el caso de expresar ideas que son inciertas, hipotéticas o 
+cuya verdad está condicionada a la verdad de premisas anteriores.
+El modo imperativo suele quedar fuera de los informes técnicos, salvo en casos en que se lo utilice
+a modo de énfasis. Por ejemplo, solemos indicar que determinada decisión metodológica se tomó "porque
+el consenso es que el trabajo *debe* realizarse de esta manera si queremos asegurar su eficacia".
+
+Esta regla está implícita en la manera en la que naturalmente se escribe o se habla, pero es importante
+tenerla en cuenta en la etapa de revisión, antes de entregar el informe, para identificar si lo que se
+está escribiendo es realmente lo que se quiere transmitir.
+
+** Regla 3: Uso de la Voz Gramatical
+
+---- derecha
+
+Voz pasiva:
+
+La determinación de la distancia *se realizó* por el metodo de estadimetría.
+
+Los calculos realizados *están descriptos* en el apartado anterior.
+
+Voz activa:
+
+El apartado anterior *describe* los calculos realizados
+
+---- derecha
+
+Un factor sensible en la escritura de textos técnicos es el correcto uso de las voces gramaticales.
+Por ejemplo, la oración precedente, y curiosamente esta misma oración y la que sigue a esta, están 
+escritas utilizando la voz pasiva. Las oraciones están escritas utilizando la voz pasiva cuando el
+sujeto del verbo no es quien ejecuta la acción que se está describiendo. 
+
+Una oración escrita utilizando voz activa describe acciones realizadas por el mismo sujeto del verbo
+de la oración. Ponemos como ejemplo de este caso la oración precedente, y esta misma, donde el sujeto
+es el "nosotros" implícito en la conjugación del verbo.
+
+Está ampliamente extendido en la escritura de informes el uso de la voz pasiva, de modo que el énfasis
+queda puesto en las acciones que fueron realizadas y no en el sujeto que las realizó.
+
+** Regla 4: Un párrafo, Una idea
+
+A la hora de escribir un texto de mediana extensión en prosa, es muy importante tener en cuenta las
+divisiones que presenta naturalmente el mismo. /*--divisiones del texto--*/
+
+Una primera división se nos plantea en las oraciones que conforman el texto. Sobre ésta, cabe decir 
+que es mas claro el desarrollo de las ideas cuando las oraciones utilizadas son simples. Con esto
+queremos remarcar que existen muchos casos en que una oración larga puede dividirse en varias 
+oraciones más cortas y de estructura más simple. Un indicador natural de la complejidad en una 
+oración es la cantidad de verbos y la cantidad de objetos que figuran en la misma. Cuando se tienen
+frases largas, es posible separarlas individualizando cada verbo y su objeto en una oración independiente.
+/*--division por oraciones, oraciones simples--*/
+
+La siguiente división que se plantea, y tal vez la más importante, es la división en párrafos. Es de
+vital importancia que cada párrafo plantee una idea y solo una idea. De esta manera, al realizar un
+análisis del texto, podremos fácilmente identificar que partes de este son centrales y cuales no, a 
+partir de la identificación de la idea que subyace a cada uno de ellas. Como ventaja adicional, una vez
+que se completó la escritura de un texto, si hacemos el ejercicio de anotar en el margen de cada párrafo
+cual es la idea que expresa, podremos detectar rápidamente si estamos repitiendo ideas a lo largo del
+desarrollo, algo que dificulta la comprensión del texto por parte de terceros.
+/*--division por parrafos, un parrafo una idea--*/
+
+A modo de ejemplo, en esta sección agregamos a cada parrafo una nota en bastardilla indicando cual es la 
+idea que desarrolla. Del mismo modo, al revisar el texto de un informe, debe poder extraerse fácilmente
+la idea central de cada parrafo y resumirla en pocas palabras. /*--ejemplo de uso--*/
+
+
+* Sobre las Figuras, o cómo hacemos que una imagen complementaria se vea pertinente.
+
+Un capitulo aparte merece la ubicación y puesta en contexto de las figuras y tablas dentro del texto 
+del informe.
+
+Cuando hablamos e figuras nos referimos a todo tipo de gráfico, esquema, dibujo o imagen que sea necesario
+incluir para la completa comprensión de la información que se está transmitiendo.
+
+** Figuras realmente pertinentes.
+
+---- derecha
+
+#+CAPTION: Como la caligrafía, que es fundamental para la expresion manuscrita, es también importante la elección de un tipo y tamaño de letra adecuados.
+[[./img/caligrafia.png]]
+
+---- derecha
+
+Sabemos que al incluir una imagen interrumpiremos de alguna manera el flujo de la lectura, ya sea visualmente,
+porque la imagen apartará la atención del lector, o explícitamente, porque induciremos al lector a que 
+antes de continuar la lectura observe determinada figura que se menciona en el texto.
+Es por esto, que, aunque parezca contradictorio, la inclusión de figuras complementarias no siempre agrega
+claridad al texto sino que muchas veces obstaculiza la transmisión de la información.
+
+En consecuencia, a la hora de incluir una figura en un informe, debemos considerar que la misma sea 
+realmente pertinente. Para esto, debemos considerar si la figura que estamos incluyendo simplifica 
+la comprensión de los conceptos desarrollados, o por el contrario, si la idea que quiere reforzar
+ya esta representada suficientemente en el texto. Veamos que una figura puede ser en si misma 
+explicativa, agradable a la vista, e incluso sumamente informativa, pero si esa información distrae
+la atención con respecto a ideas mas centrales, su inclusión puede ser perjudicial al conjunto.
+
+** El contexto de la figura.
+
+Cuando se incluye una figura o una tabla, existen varias maneras de ponerla en contexto. En el caso intuitivo,
+presentaremos la figura inmediatamente antes de incluirla, es decir, el flujo del texto se vera interrumpido
+por la figura, pero antes incluiremos una frase que la introduzca.
+Si bien esta forma de utilizar una figura es muy común, pocas veces es la adecuada. Al mencionar explícitamente
+en el texto a "la figura que sigue:" estamos forzando la interrupción de la lectura, y por tanto el desarrollo
+conceptual. Esta interrupción solo debe darse en casos donde esté realmente justificada, como por ejemplo cuando
+la información que presenta la figura sea parte indispensable de un concepto que se quiere transmitir, y no exista
+forma de entender dicho concepto sin observarla.
+
+Otra forma de introducir una figura, menos intuitiva al escribir pero mas natural para la lectura, es hacer mención
+de ella en el texto en forma discreta, ya sea con una nota secundaria, o con una aclaración entre paréntesis. Esta
+mención "al pasar" de una figura, no induce al lector a interrumpir la lectura, y en cambio lo informa de la existencia
+de la información complementario. De esta manera, cuando el lector considere que es pertinente, interrumpirá la lectura
+para observar la figura en cuestión.
+
+** El pie de figura
+
+La posibilidad de introducir figuras que no interrumpan el flujo de la lectura nos lleva a la necesaria inclusión de una
+nota aclaratoria sobre la naturaleza de cada figura, en lo que se conoce como *pie de figura*.
+
+En el pie de la figura incluiremos el nombre de la misma, que comúnmente es un numero correlativo, y una breve descripción
+de su contenido. Esta información se coloca justo debajo o al margen de la figura, de manera que el lector pueda
+independizar la lectura de las figuras de la lectura del texto, sin perder el contexto necesario
+para comprender cada una por separado. En adición, nombrar las figuras nos permite referirnos a ellas en el texto
+por su nombre, por ejemplo "En la Figura 1 se muestra ...".
+
+** Ubicación en la página.
+
+En caso de escribir el texto en forma tal que la ubicación de las figuras o las tablas no quede determinada por el mismo,
+será preferible ubicar las mismas al principio o al final de la página, de modo que no interrumpan la lectura. 
+En la mayor parte de los casos el tamaño de las figuras no necesita ser exageradamente grande, siendo posible ubicar
+por ejemplo dos figuras una al lado de otra en el ancho de la página.
+
+Suele recomendarse que la primer página de un trabajo no contenga figuras para evitar la interrupción de la 
+lectura de las explicaciones introductorias, que en muchos casos son las que nos dan un panorama de qué podremos
+esperar del trabajo y también una primera impresión a la luz de la cual mirar las figuras.
+
+* Separación en Secciones
+
+Más allá de la organización natural del texto que mencionamos anteriormente al hablar de los párrafos,
+existe una organización que podemos llamar "*artificial*", que consiste en separar el texto por secciones a
+las que separamos por medio de títulos o subtítulos.
+
+En la gran mayoría de los casos es pertinente comenzar un trabajo con un pequeño resumen, de un párrafo único
+por ejemplo, donde se describe cual es la idea general que corre detrás del trabajo que se va a leer. Esta sección
+suele introducirse al inicio sin ningún titulo especial, pero con algún detalle tipográfico que la identifique.
+Podemos asociar esta sección a lo que en un libro es el prologo o en su versión mas concisa un epígrafe.
+
+En este punto, al referirnos a informes técnicos se nos abren dos posibilidades. El trabajo puede tener un hilo
+conductor marcado alrededor de un único tema, o bien tratar de varios temas bien separados.
+
+** Separación según el desarrollo metodológico.
+
+Aplicado a los típicos trabajos prácticos de una materia, un ejemplo del primer tipo de informe se da cuando
+debemos entregar un trabajo que consiste de un único ejercicio complejo o bien de varios ejercicios encadenados
+que podrían interpretarse como uno solo. En este caso, si no hay una delimitación especial pedida por el docente, 
+la división mas adecuada es la de "Materiales y Métodos", "Desarrollo", "Resultados", "Discusión" y "Conclusión".
+donde las secciones de desarrollo y discusión pueden en ciertos casos fusionarse con otras si la comprensión 
+no se ve perjudicada y en cambio la brevedad del trabajo beneficia al resultado.
+
+En este esquema la sección de "Materiales y Métodos" detalla la fuente de los datos utilizados y la base teórica
+sobre la que se desarrolla el trabajo. La sección de Desarrollo entrará en el detalle del trabajo realizando, 
+explicando como se aplico puntualmente la metodología sobre los datos. La sección de Resultados presentará el
+producto de los cálculos o experiencias realizadas, sin entrar en interpretaciones ni descripciones. En la sección
+de Discusión se describen las posibles interpretaciones de los resultados, se destacan los puntos que deben
+analizarse en profundidad y pueden presentarse cálculos o experiencias complementarias concisas que
+aclaren o complementen los resultados principales. Finalmente, la sección de Conclusiones retoma las lineas de 
+discusión abiertas y realiza una argumentación breve, que permita cerrar el trabajo buscando las consecuencias
+de las premisas que se expusieron durante la discusión.
+
+** Separación por tema.
+
+El segundo tipo de división mencionada, corresponde al caso en el que se trabaja sobre muchos temas 
+distintos que no tienen una relación evidente entre sí, o bien, cuando se informa sobre un trabajo
+que cuenta con múltiples ejercicios marcadamente distintos. 
+En este caso, la división explícita sera la separación por *tema/ejercicio*, y toda otra división mas profunda
+se encontrará en forma implícita en el texto.
+
+Nos parece importante destacar, para terminar esta sección, que si bien la falta de separación en un trabajo
+extenso puede hacer que este sea difícil de leer, también el exceso de divisiones forzadas en el texto contribuye
+a interrumpir y obstaculizar el flujo de la lectura y el desarrollo de los conceptos.
+
+** Divisiones débiles.
+
+Mencionaremos otro tipo de división que se da en un texto, y que llamaremos aquí división débil.
+Está división se da cuanto hacemos uso de recursos de formato para marcar una división a la que no
+daremos entidad de sección individual sino que simplemente enfatizaremos la separación con un cambio
+en la forma de la escritura.
+
+En esta categoría, debemos considerar el uso de la sangría o el espaciado, que pueden marcar el inicio de un
+nuevo tren de conceptos encadenados. También debemos considerar el uso de listas, variaciones en el tamaño de
+los márgenes, secciones del texto enfatizados con letra /itálica/ o *negrita*, etc.
+
+Todos estos recursos ayudan a atraer la atención del lector cuando se realiza un giro o cambio en el
+desarrollo del texto, dándole a entender que hay un cambio mas o menos significativo en el contenido
+pero sin llegar a constituirse un cambio completo de tema o una interrupción de la línea de argumentación.
+
+\textsc{Un ultimo recurso dentro de esta categoría} es la de enfatizar con letras en versalita las primeras palabras
+de un párrafo, marcando que constituye la introducción de una nueva idea.
+
+* Notas al Pie y Citas Bibliográficas.
+
+En caso de haber utilizado bibliografía de consulta para realizar un trabajo, esta situación debe estar
+aclarada con una mención dentro del texto y un apartado nombrado convenientemente como "Bibliografía",
+donde se lista todo el material consultado.
+
+También, toda aclaración que no hace al trabajo, pero que es importante de hacer, como por ejemplo la fuente
+de los datos utilizados o la dirección URL de acceso a un recurso, el nombre del software utilizado, etc.,
+debe realizarse con un superíndice en el texto y la correspondiente nota al pie.
+
+* Epílogo: Lista para Verificación de un escrito.
+
+A continuación, y para tener una guía rápida a la hora de evaluar la estructura de un texto, introducimos
+una lista de verificación que es conveniente revisar antes de presentar un trabajo.
+
+- Carátula.
+  - [ ] El trabajo tiene carátula.
+  - [ ] La carátula tiene datos del alumno.
+  - [ ] La carátula tiene datos del trabajo.
+  - [ ] la carátula tiene datos de los docentes.
+- Texto
+  - [ ] Se conserva la coherencia en los tiempos verbales
+  - [ ] Se utiliza la voz pasiva cuando es necesario.
+  - [ ] Se evita el lenguaje coloquial.
+  - [ ] Se realizó corrección y revisión de la ortografía.
+  - [ ] Se utiliza estilo de texto justificado
+  - [ ] Cada párrafo expresa una idea.
+  - [ ] Se utilizó la sangría en primera línea al inicio de cada sección y para marcar divisiones importantes.
+  - [ ] Uso correcto de los signos de puntuación: comas, puntos, punto y coma, dos puntos, etc.
+- División
+  - Si el texto tiene Secciones.
+    - [ ] Las secciones presentan un orden claro
+    - [ ] Los títulos o subtítulos están debidamente identificados
+    - [ ] Las divisiones no dificultan la lectura
+- Figuras
+  - [ ] Las Figuras no interrumpen la linea de argumentación del texto.
+  - [ ] Cada figura está debidamente identificada y numerada.
+  - [ ] Los pies de figura contienen una descripción adecuada de cada figura.
+- Trabajos Prácticos
+  - [ ] Se resolvieron todos los ejercicios.
+  - [ ] Se puede identificar a qué parte del enunciado responde cada sección.
+
+
+* Footnotes
+
+[fn:1] http://dle.rae.es/srv/fetch?id=UPg8xCx, acepción 1.
+
+[fn:2] http://dle.rae.es/srv/fetch?id=UPg8xCx, acepción 4.
+
