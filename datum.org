@@ -1,0 +1,707 @@
+* La Figura de La tierra
+  :PROPERTIES:
+  :CUSTOM_ID: la-figura-de-la-tierra
+  :END:
+
+*El concepto de *Datum** atraviesa los campos de la geodesia y las
+representaciones cartográficas y se encuentra en la base de la
+construcción de cualquier clase de documento geográfico. Sin embago, no
+es posible darle una definición unívoca al término, siendo que se lo
+utiliza tanto formal como informalmente para designar una multiplicidad
+de conceptos relacionados. Desarollaremos los conceptos necesarios a
+través del planteo de lo que podemos llamar como problema del datum ,
+incluyendo al mismo tiempo los conceptos relacionados de /sistema de
+referencia/ y /marco de referencia/.
+
+** El problema del datum: Enunciado
+   :PROPERTIES:
+   :CUSTOM_ID: el-problema-del-datum-enunciado
+   :END:
+
+*Encuentre Un Método Sistemático* que le permita representar puntos con
+exactitud arbitraria sobre la superficie de la tierra partiendo solo de
+datos susceptibles de ser medidos desde la misma.
+
+Se nos pide encontrar un método para ubicar puntos sobre la tierra con
+exactitud arbitraria. Esto implica definir un sistema de coordenadas que
+sea válido para cualquier punto sobre la tierra.
+
+La solución intuitiva a este problema es la definición de un sistema de
+coordenadas cartesianas geocéntricas. Sin embargo, esta propuesta se
+torna inviable si consideramos que la orientación con respecto a estos
+ejes no es /a-priori/ accesible desde un punto arbitrario de la
+superficie terrestre.
+
+Esto nos lleva a considerar la pregunta que sigue, relacionada al
+enunciado del problema. ¿Cuales son los datos susceptibles de ser
+medidos desde la superficie terrestre?
+
+*** El sistema de coordenadas local
+    :PROPERTIES:
+    :CUSTOM_ID: el-sistema-de-coordenadas-local
+    :END:
+
+Un observador ubicado en la superficie terrestre es capaz de medir
+distintas cantidades en forma directa.
+
+En primer lugar, puede medir la orientación de la línea de plomada, o
+vertical del lugar, que corresponde a una linea de fuerza del campo
+gravitatorio terrestre.
+
+Por otro lado, es capaz de identificar una superficie horizontal, es
+decir materializar un plano perpendicular a la vertical del lugar, o
+dicho de otro modo, un plano tangente a la superficie equipotencial del
+campo gravitatorio terrestre que pasa por el punto en cuestion.
+
+Para hacerse una idea más gráfica de estos conceptos, puede notarse que,
+de suponerse una tierra esférica, homogenea e irrotacional, las
+superficies equipotenciales constituyen superficies de esferas
+concentricas, y las lineas verticales son radios que unen el punto
+observado con el centro de la tierra.
+
+---- figure
+
+[fig:equipotenciales]
+
+[[./imgs/Equipotenciales.jpg]]
+
+---- figure
+
+A partir de estos datos observados, podría plantearse un sistema de
+coordenadas locales a ese punto. Por ejemplo, se define una terna
+cartesiana con el eje *z* alineado a la vertical del lugar y el plano
+*tx* correspondiendo al plano horizontal. Sin embargo, aun necesitamos
+agregar información al sistema para dejar fija la orientación del eje
+*x*.
+
+---- derecha
+
+[fig:plomadayhorizonte]
+
+[[./imgs/PlomadaHorizonte.jpg]]
+
+---- derecha
+
+Podriamos fijar una orientación arbitraria del eje x, y, a partir de
+esta construcción, realizar mediciones de ángulos horizontales y
+distancias. Esto es lo que hacemos al utilizar un teodolito o estación
+total.
+
+Ahora bien, el sistema propuesto no es una solución global a nuestro
+problema. Un observador que realizara mediciones en este sistema notará
+que la vertical de un punto arbitrario distinto del origen no es
+perpendicular al plano *xz*, siendo este efecto más exagerado a medida
+que nos alejamos del origen.
+
+Si por un momento hacemos la suposicion de que el observador puede
+materializar un plano horizontal arbitrariamente grande, vemos que, si
+se aleja a suficiente distancia del origen, y mide ángulos entre dicho
+plano y distintas líneas de plomada locales, llegará a la ineludible
+conclución de que está trabajando sobre una superficie que no es plana.
+Si el observador fue suficientemente cuidadoso al medir las distancias y
+orientaciones en cada punto hacia y desde el punto origen, estará en
+condiciones de inferir que está trabajando sobre una superficie
+aproximadamente esférica, y podrá estimar el radio.
+
+Este es el experimento de eratóstenes. En su caso, la materialización
+del plano arbitrariamente grande la logró utilizando un plano
+perpendicular a la dirección que une al observador con el sol, haciendo
+la razonable suposición de que el sol está suficientemente lejos para
+considerar esta dirección inmutable. Luego, utilizó la sombra en un pozo
+para sincronizarce con el momento en que su dirección de referencia
+coincidia con la vertical de un lugar, y la sombra de una columna o
+varilla, para medir el ángulo formado con la vertical en otro lugar. Los
+puntos flojos de este experimento radican en la medición de distancia,
+calculada a partir de un tiempo de viaje, y en el error producido en la
+medicion del tiempo por los medios de la época.
+
+---- derecha
+
+[fig:eratostenes]
+
+[[./imgs/Eratostenes.png]]
+
+---- derecha
+
+*** Referirse a puntos lejanos: Observaciones Astronómicas
+    :PROPERTIES:
+    :CUSTOM_ID: referirse-a-puntos-lejanos-observaciones-astronómicas
+    :END:
+
+*Las estrellas representan una referencia* de inestimable utilidad
+cuando nos proponemos medir puntos sobre la tierra. Su importancia es
+evidente toda vez que vemos que la única referencia intuitiva con la que
+contamos, es decir, la verticalidad, no constituye un eje constante sino
+que nos da una dirección que varia dependiendo de nuestra ubicación.
+
+Es por eso, que, para seguir considerando la información con la que
+contamos, que podemos introducir la latitud astronómica y el azimut
+astronómico.
+
+No entraremos en detalles, sino que basta decir que, realizando
+observaciones cuidadosas de los astros lejanos, podemos estimar con
+buena precisión el ángulo que forma la dirección de la linea de plomada
+en el lugar de observación con el plano del ecuador celeste [fn:1], y
+asimismo podemos estimar con una presición similar la posición de el
+plano meridiano [fn:2] del lugar de observación, y medir ángulos con
+respecto a este.
+
+Retomando el sistema de coordenadas locales, contamos ahora con la
+posibilidad de definir una referencia fija para el eje x, dirección a la
+que llamaremos norte, y que se construye como la intersección entre el
+meridiano del lugar y el plano horizontal *xy*.
+
+*La vinculación entre los sistemas locales* de dos puntos observados nos
+plantea la necesidad de elegir una figura de referencia sobre la que
+realizar cálculos.
+
+Dijimos que la conclución mas sencilla de obtener es la que la tierra es
+una esfera, y por lo tanto este será nuestro primer modelo. Ubicaremos
+la esfera con su centro coincidente a nuestro centro terrestre, y
+asociaremos a esta esfera una terna cartesiana $XYZ$, con origen en su
+centro, y el eje $Z$ coincidente con el eje de los polos. De esta
+manera, la orientación del eje $Z$ es accesible a los sistemas locales
+definidos anteriormente, a partir de la determinación del polo
+astronómico. Queda por ahora indeterminada la dirección del eje $X$
+
+---- derecha
+
+[fig:sistemas] [[./imgs/sistemas.png]]
+
+Redibujado de Moritz y Hoffman
+
+---- derecha
+
+*Una parametrización* de nuestro modelo esférico nos permitirá trabajar
+directamente sobre la superficie de la esfera con comodidad, y va además
+en consonancia con el enunciado de nuestro problema, que dice
+expresamente que trabajaremos con datos accecibles desde la superficie,
+y para determinar posiciones con presicion sobre la misma.
+
+La parametrización que surge de considerar las coordenadas esféricas
+$M(r=k,\varphi,\upphi)$ sería suficiente para nuestros propósitos. Sin
+embargo, utilizaremos una versión modificada de la misma,
+$M(r=k,\lambda,\varphi)$, donde utilizamos la latitud $\varphi$ se mide
+con respecto al plano $xy$, en lugar de la colatitud $\upphi$, que se
+mide con respecto al eje $Z$.
+
+---- derecha
+
+[fig:esfericas] a) [[./imgs/colatlon.png]] b) [[./imgs/latlon.png]]
+
+CC BY-SA 3.0, Reelaborado a partir de el trabajo
+https://commons.wikimedia.org/w/index.php?curid=5624712
+
+---- derecha
+
+*Los problemas geodésicos* surgen a partir de la necesidad de vincular
+los sistemas que llamamos locales en dos puntos diferentes de nuestra
+tierra-esfera. Normalmente se los denomina como problema directo y
+problema inverso.
+
+El problema geodésico directo consiste en hallar las coordenadas
+$\varphi_1,\lambda_1$ de un punto de destino a partir de las coordenadas
+de un punto de origen, el azimut de la dirección desde el punto origen
+al de destino, y la distancia medida entre ambos
+$\varphi_0, \lambda_0, \alpha_{01}, d_{01}$. Nótese que para realizar la
+medición de $\varphi_0, \alpha_{01} y d_{01}$ basta con utilizar el
+sistema local origen, donde estas tres cantidades están perfectamente
+definidas.
+
+El problema geodésico inverso consiste en, dadas las coordenadas
+$\varphi_o,\lambda_o,\varphi_1,\lambda_1$ de dos puntos cualesquiera,
+hallar la distancia entre ambos y los acimut correspondientes,
+$d_{01},\alpha_{01},\alpha_{10}$.
+
+Sobre la solución de estos problemas baste decir que existe y que no
+implica ningun supuesto adicional a los que ya se hicieron. Vale si
+aclarar, que el radio terrestre $r=k$ entra como un parámetro dentro de
+la solución de ambos problemas.
+
+*Para determinar nuestro modelo de tierra* nos faltará en consecuencia
+hallar un valor para el radio. Esto puede realizarse fácilmente si se
+parte de puntos con $\varphi_o,\lambda_o,
+\varphi_1,\lambda_1$ conocidas, y se mide
+$d_{01},\alpha_{01},\alpha_{10}$. La única dificultad de este planteo
+está en que la coordenada $\lambda$ depende de la pocicion del eje X de
+nuestro modelo, que había quedado indeterminada, y además esta
+coordenada no es accesible desde los sistemas locales $xyz$.
+
+Ambas dificultades son salvables. Para uno de los puntos es posible
+definir el eje $X$ en forma arbitraria de modo que $\lambda=0$. Luego,
+con esta orientación ya definida, podemos tomar el otro punto sobre el
+mismo plano meridiano, haciendo uso del azimut astronómico para
+garantizar esta condición. De este modo, tenemos acceso a todos los
+datos necesarios para calcular el radio terrestre.
+
+*** Validando nuestro primer modelo
+    :PROPERTIES:
+    :CUSTOM_ID: validando-nuestro-primer-modelo
+    :END:
+
+Utilizando las definiciones y mediciones realizadas, un observador
+podría realizar cálculos a partir de los problemas geodésicos, para
+construir una poligonal cerrada sobre la tierra, verificando si el error
+obtenido al regresar al punto de origen es compatible con la precisión
+de los intrumentos.
+
+---- derecha
+
+[fig:poligonalgeodesica] [[./imgs/geopoly.png]]
+
+---- derecha
+
+Otra experiencia que podría realizarse es la de utilizar la metodología
+descripta anteriormente para el cálculo del radio terrestre, aplicandola
+a distintos pares de puntos, ubicados a distintas latitudes.
+
+Cualquiera de estas metodologías nos llevará al hallazgo de que el
+modelo esférico no se ajusta perfectamente a la tierra. En el primer
+caso obtendremos un error de cierre mayor al que correspondería con el
+instrumental utilizado, mientras que en el segundo de los casos
+observaremos que la estimación del radio terrestre varía con la latitud.
+
+Del análisis de estas mediciónes, y a partir de la consideración de la
+influencia de la rotación terrestre sobre la distribución de su masa y
+sobre su propio campo gravitatorio, a la luz de las teorías
+desarrolladas por Isaac Newton, descubriremos que existe un modelo
+geométrico más apropiado que el que elegimos. Este modelo es el de el
+elipsoide de revolución.
+
+*** El modelo elipsoidico de la tierra
+    :PROPERTIES:
+    :CUSTOM_ID: el-modelo-elipsoidico-de-la-tierra
+    :END:
+
+*El elipsoide es una superficie* cuádricas, definida por la ecuación de
+forma canónica:
+
+$$\frac{x^2}{a_1^2}+\frac{y^2}{a_2^2}+\frac{z^2}{b^2}=1$$
+
+---- derecha
+
+[fig:sistemas] a) [[./imgs/triaxial.png]] b) [[./imgs/elipsoide.png]]
+
+CC BY-SA 4.0, Reelaborado a partir del trabajo en
+https://commons.wikimedia.org/w/index.php?curid=45585493
+
+---- derecha
+
+*El elipsoide de revolución* es en particular caso en que $a_1=a_2$,
+siendo éste conocido con el nombre de elipsoide de revolución, llamado
+así porque surge de hacer girar la elipse de ecuación
+
+$${\frac{x^{{2}}}{a^{{2}}}+\frac{z^{{2}}}{b^{{2}}}=1}$$
+
+perteneciente al plano $XZ$, alrededor del eje $Z$, coincidente con el
+eje menor de la elipse.
+
+Los ejes $a$ y $b$ bastan para definir a la elipse y al elipsoide de
+revolución correspondiente. Sin embargo no es poco comun definir al
+elipsoide con respecto a parámetros cuya definicion en este momento no
+es procedente.
+
+*Para trabajar sobre el elipsoide* basta con definir la latitud en base
+a la linea perpendicular al mismo, a la que podemos llamar vertical
+elipsoidal, y definir la longitud y el azimut en forma análoga a como lo
+hicimos en la esfera.
+
+Bastan estas definiciones para resolver en forma teórica los problemas
+geodésicos, dentro de los cuales ingresaran como incognita las
+longitudes de los ejes $a,b$ en lugar de un único radio.
+
+Siguiendo la metodología antes planteada, se pueden realizar mediciones
+a partir de los sistemas locales al igual que describimos para la
+esfera, y a partir de las ecuaciones de los problemas geodésicos
+resolver un problema de optimización para hallar los valores de $a$ y
+$b$ que mejor se ajusten a la evidencia empírica.
+
+Estos cálculos fueron realizados en numerosas oportunidades a lo largo
+de la historia de la geodesia, desde al el siglo XVIII en adelante. Los
+resultados obtenidos, si bien fueron mejorando en presicion a lo largo
+del tiempo, siempre llevaron a la conclusión de que el modelo elipsoidal
+es suficiente para realizar los calculos que son necesarios para ajustar
+las mediciones realizadas desde distintos puntos de la superficie, es
+decir para vincular los sistemas locales planteados. En suma, la
+solución de los problemas geodésicos en el caso elipsoidal demostró ser
+suficientemenete precisa como para resolver el problema del datum.
+
+*** La Materialización del DATUM
+    :PROPERTIES:
+    :CUSTOM_ID: la-materialización-del-datum
+    :END:
+
+Hasta ahora, mencionamos que asociamos al elipsoide o a la esfera una
+terna cartesiana $XYZ$ y asumimos que el origen de esta terna debia ser
+coincidente con el centro de la tierra. No entraremos en discuciones
+sobre cual es el centro de la tierra sino que asimilaremos este concepto
+al de centro de masas.
+
+*Para todas las mediciones* y experimentos que planteamos, partimos de
+nuestros sistemas locales, obtuvimos las cantidades necesarias por
+observación, ya sea latitudes, azimut, direcciones o distancias, y
+realizamos cálculos suponiendo que esto implicaba a los supuestos del
+parrafo anterior. Sin embargo, es fácil ver que esto no es así.
+
+En caso de que realmente la utilización de latitudes astronómicas en
+fuera absolutamente compatible con el uso de latitudes elipsoidales
+provenientes de la solución del problema geodésico directo, quedaría
+demostrada la coincidencia de las verticales astronómicas y elipsoidales
+en todos los puntos. Esto implicaria a su vez que las superficies
+equipotenciales terrestres son efectivamente elipsoides de revolución lo
+cual no es cierto.
+
+Por este motivo, al resolver el problema geodésico directo partiendo de
+una observación astronómica, la latitud de destino obtenida no
+coincidirá exactamente con la latitud astronómica medida en el lugar de
+destino. Sin embargo, está amplicamente demostrado en la teoría y sobre
+todo en el uso, que el modelo elipsoidal es suficiente como marco de
+referencia para resolver el problema del datum tal como lo planteamos.
+Solo Resta analizar cual es la posicion del elipsoide y de su terna de
+referencia $XYZ$ con respecto al centro y eje de rotación de la tierra
+real.
+
+*La ubicación de la terna XYZ con respecto a la tierra* queda definida
+forzosamente al comenzar una medición geodésica con una observación
+astronómica. Esta metodología supone que en el lugar de inicio de la
+medición la vertical del lugar coincide con la vertical del elipsoide, y
+que el azimut al norte es el mismo en sentido astronómico que sobre el
+elipsoide. De esta manera, el punto de arranque de las mediciones se
+convierte en lo que comunmente se llama *punto datum*.
+
+Queda en evidencia así, la utilidad de determinar coordenadas
+elipsoidicas para determinados puntos de manera que al iniciar una nueva
+medición podamos utilizar estas en lugar de las astronómicas, de modo
+que trabajemos siempre utilizando los mismos supuestos de origen y
+orientación de los ejes $XYZ$ de referencia del elipsoide. A esta tarea
+se le denomina materializacion de un datum o materialización de un
+*sistema de referencia* [fn:3]. Al producto de esta operación se le
+denomina *marco de referencia*[fn:4].
+
+*La arbitrariedad en la elección de un unico punto datum* nos lleva a
+considerar la construcción de convenciones mas complejas a la hora de
+materializar un sistema de referencia. Para evitar un sesgo
+injustificado seria razonable, por ejemplo, realizar determinaciones
+astronómicas sobre puntos distribuidos a lo largo de un area de interés,
+agregar a ellas mediciones geodésicas de direcciones y distancias, y
+luego incluir toda esta información en un problema de optimización donde
+se dejan libres los parametros que representan la ubicación y
+orientación del elipsoide, o lo que es lo mismo, de sus ejes asociados
+$XYZ$.
+
+---- derecha
+
+[fig:puntodatum] [[./imgs/puntodatum.jpg]] [[./imgs/dospuntosdatum.jpg]]
+
+---- derecha
+
+Dos casos particulares de esta metodología que vale la pena considerar
+son los siguientes. Existe la posibilidad de, si el area de medición es
+suficientemente grande, suponer que la inclución de los radios del
+elipsoide $a$ y $b$ como parámetros a optimizar mejore el resultado
+final. Esto se ha realizado en numerosas ocaciones, dando origen a
+distintos parámetros de elipsoide que son utilizados al trabajar en
+distintos datum. Una consecuencia poco conveniente de esta situación es
+que en muchas oportunidades se asocia en forma incorrecta el concepto de
+*datum* al conjunto de los parámetros que definen la geometría del
+elipsoide, ignorando el problema de la ubicacion del mismo con respecto
+a la tierra. Esta metodología, y la de selección de un único *punto
+datum* nos lleva a la realizacion de lo que conocemos como *datum
+local*. Un ejemplo familiar para nosotros es el datum Campo Inchauspe
+'69
+
+Otro caso, que es mas beneficioso de considerar, es aquel en el que se
+dispone de mediciones homogeneamente distribuidas en la superficie de
+toda la tierra. En este caso, es razonable suponer que la optimizacion
+de los parámetros nos llevará a una ubicación de la terna de referencia
+donde el origen coincida realmente con el centro de masas de la tierra y
+el eje Z sea colineal al eje de rotación terrestre. Este concepto es
+aplicado en la construcción de lo que conocemos como *datum global*
+
+*Esta claro que la medición de la superficie completa de la tierra* es
+una tarea injustificada e inpracticable para un observador o grupo de
+observadores que prevén tienen la necesidad de realizar mediciones fuera
+de un area acotada. Este es el principal motivo de que, para permitir el
+desarrollo de la cartografía, grán cantidad de paises hayan definido
+datum locales nacionales. Sin embargo, el avance realizado en 1957 con
+la puesta en órbita exitosa del satélite */Sputnik 1/*, abrió la
+posibilidad de construcción de un datum global con métodos mas simples
+de implementar que una campaña geodésica global.
+
+*Dentro del marco de la física clásica*, la teoría de Newton permitió
+determinar como se comporta un cuerpo que orbita a otro impulsado por la
+fuerza de gravedad. Las observaciones realizadas por Kepler demostraron
+gran presición en la predicción de las órbitas de los cuerpos celestes.
+Partiendo de estas ideas, podemos suponer que la medición de la orbita
+de un satélite a partir de estaciones fijas en tierra nos permitirá
+determinar la posición del centro de masas terrestre con respecto a
+estas estaciónes.
+
+*Con la introducción de los efectos relativistas* en la física, el
+cálculo de las órbitas se volvió aún más preciso, aunque queda fuera de
+nuestro alcance el explicar los detalles. Baste decir que, lo unico que
+restaba para la materialización de un datum "espacial", era el
+desarrollo de un metodo adecuado de medición de la distancia entre las
+estaciones en tierra y el satélite en su órbita.
+
+No demoró mucho tiempo la creación de métodos adecuados. Dos días
+después del lanzamiento del */Sputnik/*, se comenzó a idear un sistema
+que aprovechara el efecto doppler de las ondas de radio emitidas por el
+satélite para la medición de la necesitada distancia. En 1959 se intentó
+el primer lanzamiento de un satelite dedicado a este tipo de mediciónes
+por parte de los Estados Unidos, aunque el primer lanzamiento exitoso
+ocurrió en 1960, considerandose el sistema, conocido como *Transit* como
+completamente funcional a partir de 1967. La USSR lanzó su propio
+sistema de este tipo, comenzando en 1967, llamado sucesivamente a sus
+versiones *Tsiklon*, *Tsikada* y *Parus*. Sin embargo, durante el
+período de desarrollo de este sistema, otros sistemas se idearon y
+llevaron a la práctica. Por ejemplo, el sistema SLR (/Satellite Laser
+Ranging/), sistema de medición con laser a satélites en órbita fue
+llevado a la práctica con éxito en 1964 por la NASA estadounidense. Cabe
+mencionar el uso de Interferometria con Radiotelsecopios (VLBI), cuyas
+aplicaciones geodésicas también comenzaron a ser aprovechadas a partir
+de los años 70, determinando con mucha precición la orientación de
+vectores sobre la superficie terrestre. A modo aclaratorio, hacemos
+notar que el sistema SLR tiene muy buena precicion en la determinación
+del geocentro, al basarse en la medición de órbitas cercanas a la
+tierra, y el sistema VLBI tiene muy alta presición en la determinación
+de la orientación del eje de rotación terrestre, al referirse a fuentes
+naturales de ondas de radio extremádamente lejanas a la tierra.
+
+*La materialización de un datum global fue entonces posible*, centrando
+la terna de referencia en el verdadero centro de masas de la tierra y
+alineandola con su eje de rotación.
+
+A partir de la aparicion posterior de sistemas mas complejos como GPS
+(Global Positioning System), GLONASS (Global'naya Navigatsionnaya
+Sputnikovaya Sistema) o DORIS (Détermination d'Orbite et
+Radiopositionnement Intégré par Satellite), la redundancia de datos
+permitió una sofisticación del método, siendo que el sistema permite al
+mismo tiempo la determinación de orbitas de los satelites, pero estos
+están suficientemente lejanos como para tener buena precision en las
+orientaciones, una vez que se corrigen los multiples errores que se
+producen a lo largo del camino que recorren las ondas de radio
+utilizadas en la medición.
+
+*** La materialización del datum global
+    :PROPERTIES:
+    :CUSTOM_ID: la-materialización-del-datum-global
+    :END:
+
+Para cerrar esta sección haremos un breve resumen de cómo se llega a la
+materialización de un datum global sobre la tierra, y en que forma viene
+esta dada. Incluimos esto para hacer un desorrollo completo y para que
+el lector se forma una idea de como se relaciona este tipo de datum con
+los datum locales antes estudiados.
+
+*Al inicio de las observaciones*, se tiene una posición teórica de las
+órbitas de diferentes satélites, que no tiene en cuenta ninguna anomalia
+en el campo gravitarorio terrestre. Se tienen una cantidad de puntos de
+observación con estaciones midiendo en las técnicas GPS, SLR, VLBI y
+DORIS. En primera instancia, asumiremos que el sistema DORIS provee una
+información similar al sistema GPS, dado que ambos operan en frecuencias
+parecidas y tendrían fuentes de error similares.
+
+Los datos con los que contamos son básicamente mediciones de distancias
+desde o hacia distintos satélites obtenidos por las técnicas GPS, DORIS
+y SLR, a lo largo de una cantidad considerable de tiempo, que
+supondremos suficiente grande con respecto al período orbital de los
+satélites como para estimar sus parámetros.
+
+Conocemos expresiones mas o menos complicadas para la trayectoria de las
+órbitas, dependiendo de las perturbaciones que consideremos
+significativas. Por ejemplo, podemos considerar las perturbaciones por
+la inhomogeneidad en el campo gravitatorio terrestre con mayor o menor
+grado de detelle, agerando o quitando parámtros al sistema.
+
+Tenemos mediciones de distancias entre puntos en la tierra a partir de
+la técnica de VLBI, orientados con mucha presición a un eje que podemos
+considerar inmóbil en el espacio. La determinación de la orientación
+relativa entre estos vectores, depende de la presición en la
+determinación de los parámetros de rotación terrestre.
+
+Tenemos expresiones que constituyen un modelo de la rotación terrestre,
+que deberá forzosamente tenerse en cuenta para considerar el movimiento
+relativo entre sitios receptores y satélites.
+
+*Sugerimos un esquema de procesamiento*, a modo de ejemplo, para pasar
+de esta información a la materialización de un marco de referencia
+geocéntrico.
+
+En un primer paso, utilizando las expresiones de las órbitas
+satelitales, el modelo de rotación terrestre, y todas las distancias
+observadas, se realizará un primer ajuste de los parámetros del sistema,
+obteniendo valores y ecuaciones que nos describirán trayectoria de las
+orbitas, la posición de los puntos considerados sobre la superficie
+terrestre, y parámetros de rotación terrestre que vinculan la posición
+de las estaciones con la posición de las orbitas.
+
+Sobre este primer modelo podemos hacer algunas consideraciones. En
+primer lugar, el error en la determinación de los parámetros orbitales
+no está correlacionado con una posición a-priori del centro de la
+tierra, dado que esto no se incluyó como variable en el modelo. En
+segundo lugar, la posicion del eje de rotación terrestre que surge de
+este modelo está ligado a la presicion con la que se determinaron la
+órbitas y los parámetros de transformación.
+
+En consecuencia, este primer resultado nos provee de una buena
+determinacion de las órbitas satelitales, pero los parámetros que nos
+interesan para la determinación del marco de la tierra pueden ser
+calculados con mayor presición si se realiza un nuevo cálculo.
+
+*Para la determinación del geocentro*, puede realizarse un ajuste
+utilizando las características de las órbitas, que por como fueron
+calculadas, es decir "atadas" a los puntos en la superficie, nos darán
+una observación independiente de la posición del geocentro con respecto
+a ellas. Esto debe hacerse a partir de una interpretación física de las
+orbitas, y eventualmente debe considerarse en el ajuste la
+inhomogeneidad del campo gravitatorio terrestre. En este ajuste cada
+orbita tendrá un peso diferente dependiendo de la presición obtenida en
+el calculo anterior y de los errores propios de cada metodo de medición.
+
+*Para la determinación de la posición del eje de rotación* debemos
+agregar a la información ya procesada la nueva posición del geocentro
+calculada, considerando que el eje forzosamente pasará por el centro de
+masas terrestre. En segundo lugar, pero no con menos importancia,
+debemos incorporar la información que sobre la rotación nos provee la
+evolución de los vectores medidos por VLBI, que al estar referidos a un
+eje inmobil en el espacio nos brindan una información precisa, y lo que
+es más importante, independiente de la determinación de las órbitas
+satelitales.
+
+*Incluyendo esta información* en un nuevo ajuste general del sistema
+obtendremos posiciones para los puntos sobre la superficie terrestre que
+estarán ahora dentro de una terna que está centrada en el centro de
+masas de la tierra y orientada con su eje de rotación, con la máxima
+precision que permiten los medios disponibles. Solo resta asociar a la
+terna un elipsoide adecuado, y el marco de referencia queda
+materializado.
+
+*Podemos preguntarnos en que forma* se da la materialización del
+sistema. La respuesta es directa, las coordenadas $\varphi,\lambda,h$
+que se determinan con el cálculo descripto están expresadas en el marco
+deseado. Los puntos utilizados para la observación constituyen entonces
+nuestro marco de referencia, y siempre trabajaremos dentro de este mismo
+marco si asignamos a ellos las coordenadas que se obtuvieron en este
+cálculo. Esta es la metodología utilizada para materializar los datum
+más utilizados en la actualidad, Por ejemplo ITRF, o WGS84.
+
+*** Aclaraciones posteriores
+    :PROPERTIES:
+    :CUSTOM_ID: aclaraciones-posteriores
+    :END:
+
+Resta, por motivos de completitud, mencionar que un marco de referencia
+determinado de este modo queda expresado en función de un tiempo
+determinado. Esto no sería así en caso de que la tierra fuera un cuerpo
+realmente sólido. Sin embargo la realidad es que las masas se
+reditribuyen dentro de la tierra continuamente. En primera instancia el
+eje de rotación terrestre no es completamente estable. Debido a varios
+factores externos, existe lo que se comoce como movimiento polar, que
+implica que la posicion de los polos geográficos varie con el tiempo.
+Además, la tectónica de placas, que es el mecanismo por el cual el calor
+propio de la tierra se disipa al espacio, está continuamente desplazando
+los contienentes entre si haciendo que se alejen o se acerquen, y
+también produce cambios en la distribucion de masas del interior
+terrestre, que afectan a la posición del geocentro y a la orientación
+del eje de rotación.
+
+*Si consideramos estos efectos en la materialización del marco*, veremos
+que podemos incluir el cálculo la deriva polar y la deriva continental
+agregando parámetros a ajustar y aprovechando la orientación absoluta
+que nos provee el método VLBI. A pesar de esto, debemos definir para que
+tiempo es valido el marco, ya que si las coordenadas, es decir la
+materialización, varia continuamente, es necesario saber el momento
+exacto para el cual las posiciones dadas fueron válidas. Esto nos
+introduce al concepto de época de un marco de referencia, que está fuera
+de nuestra intención explicar. Solo aclararemos que, conocida la epoca
+de un marco y las trayectorias estimadas de los puntos que lo
+materializan, puede realizarse la transformación entre una medición
+realizada en epoca actual y la epoca de referencia del marco, en caso de
+que se necesite trabajar a ese nivel de detalle.
+
+*Sin ir en desmedro de esto*, y considerando que las placas tectónicas
+pueden tratarse como bloques cuasi-estables, no es perjudicial a grán
+cantidad de trabajos topográficos y geodésicos realizar los cálculos
+directamente en la época de referencia, especialmente si podemos asumir
+con fundamento que la deformacion neta del area de trabajo no es
+significativa en el tiempo.
+
+*Aclaramos, como nota final a esta sección*, que una vez materializado
+un marco de referencia, se puede realizar una densificación con el
+método que sigue. Primero se computan los parámetros de las órbitas
+satelitales GPS o GLONASS con respecto a los puntos incluidos en la
+materialización original del marco, luego se calculan las posiciones de
+una cantidad de puntos mayor, que incluya algunos de los puntos
+originales, a partir de estas órbitas. Finalmente, se ajusta la posicion
+de los puntos comunes entre la densificación y el marco origen, de modo
+que coincidan en el tiempo. Este último paso ayuda a absorver errores
+que pueden haber quedado ocultos dentro de los parámetros originalmente
+estimados en el marco, de modo que el marco y la densificación sean
+realmente compatibles. Ésta es la forma en que está construido el marco
+POSGAR07, Marco de referencia oficial de la republica argentina, que
+consituye una densificación del marco global ITRF08.
+
+** $2+1\neq3$ Los Datum Altimétricos
+   :PROPERTIES:
+   :CUSTOM_ID: neq3-los-datum-altimétricos
+   :END:
+
+*Hasta ahora hemos considerado un datum planimétrico*. Las coordenadas
+que obtuvimos dentro de nuestros marcos de referencia locales eran sólo
+$\varphi,\lambda$, determinando un punto sobre la superficie del
+elipsoide. Cuando hablamos de datum global mencionamos las coordenadas
+$\varphi,\lambda,h$, aunque no introdujimos de que hablabamos al
+mencionar "h".
+
+*La altura elipsoidal $h$* queda definida como la distancia de un punto
+al elipsoide de referencia del datum medida sobre la perpendicular al
+mismo. En este sentido, el datum global que propusimos es un datum
+tridimensional, porque, al no trabajar con coordenadas elipsoidales
+hasta el final del desarrollo, utilizamos las posiciones
+tridimensionales de los puntos, quedando implícita la coordenada h
+además de $\varphi,\lambda$.
+
+*La altura sobre el nivel del mar*, es la forma en la que se trabaja con
+la altura al utilizar datums geodésicos locales. Al definir el datum
+horizontal a partir de mediciones astronómicas, se trabaja en todos los
+puntos con altura $h=0$, y se define un criterio separado para la
+medición de alturas.
+
+Considerando que, como ya vimos, las superficies equipotenciales
+terrestre no son superficies elipsoidales. Una medición de altura que
+sea independiente de la determinación de la posición, por ejemplo basada
+en la utilización de planos horizontales, como la nivelación geométrica,
+diferirá de la altura elipsoidal. La aplicación de correcciónes a esta
+altura a partir de mediciones de gravedad garantizará la coherencia del
+sistema, pero no permitirá asociar la altura a la altura elipsoidal.
+
+Esto es un problema cuando trabajamos con datos provenientes de
+distintos sistemas. Sin embargo, un modelado de la superficie
+equipotencial terrestre de altura 0, normalmente llamada $W_0$ o geoide,
+que esté referida a posiciones elipsoidales en un datum global conocido
+puede resolver la dificultad. La calidad de esta solucion dependerá de
+la rugosidad del geoide real en la zona y de la definición y presición
+con que esté calculado el modelo de geoide. Mencionamos algunos ejemplos
+de modelo de geoide como referencia. Dos ejemplo modernos que podemos
+mencionar son EGM08 y EIGEN-6C4.
+
+** Transformaciones de datum
+   :PROPERTIES:
+   :CUSTOM_ID: transformaciones-de-datum
+   :END:
+
+*Partiendo de la metodología de construcción* de un datum, y habiendo
+definido que significa que un dato esté provisto en distintos datum,
+dedicaremos esta sección a evaluar que implica contar con información
+provista en diferentes datum, y a presentar metodologías que nos
+permitan compatibilizar esta información.
+
+
+[fn:1] 
+
+[fn:2] 
+
+[fn:3] 
+
+[fn:4] 

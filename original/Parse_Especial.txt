@@ -1,0 +1,4 @@
+figure
+marginfigure
+newtougth
+cat elipsoide.latex.tex | sed 's/[^%].*marginfigure.*/\n---- marginfigure\n/;s/newthought/textbf/;s/[^%].*{figure}/\n---- figure\n/g' | pandoc -f latex -t org -o datum.org 
