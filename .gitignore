@@ -34,3 +34,8 @@ pdf/
 *-blx.aux
 *-blx.bib
 *.run.xml
+
+# imagenes del tex original.
+sbsky/tex_imgs/
+sbsky/TFTE/
+sbsky/tufte*

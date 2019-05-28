@@ -1,0 +1,193 @@
+#+OPTIONS: toc:nil
+#+LaTex_Engine: xelatex
+#+LaTex_HEADER: \usepackage[margin=2cm]{geometry}
+
+* Radio de curvatura
+
+De Wikipedia, la enciclopedia libre
+
+El *radio de curvatura* es una magnitud que mide la
+curvatura de un objeto geométrico tal como una
+línea curva, una superficie o más en general una
+variedad diferenciable embebida en un
+espacio euclídeo.
+
+** Radio de curvatura de una curva
+   
+El *radio de curvatura* de una línea curva o un objeto
+aproximable mediante una curva es una magnitud geométrica que puede
+definirse en cada punto de la misma y que coincide con el inverso del
+valor absoluto de la curvatura en cada punto:
+
+#+BEGIN_QUOTE
+  $R_{c}(s):=\frac{1}{\chi(s)}$
+#+END_QUOTE
+
+Por otro lado la curvatura es una medida del cambio que sufre la
+dirección del vector tangente a una curva cuando nos movemos a lo largo
+de ésta. Para una curva parametrizada cualquiera la curvatura y el radio
+de curvatura vienen dados por:[fn:1] 
+
+#+BEGIN_QUOTE
+  $\frac{1}{R_{c}(t)} = \chi(t) = \frac{\left| \dot{\mathbf{r}}(t) \times \ddot{\mathbf{r}}(t) \right|}{\left| \dot{\mathbf{r}}(t) \right|^{3}}$
+#+END_QUOTE
+
+Si en lugar de un parámetro cualquiera usamos el parámetro de
+longitud de arco, la anterior ecuación se
+simplifica mucho, por resultar un vector tangente constante, y puede
+escribirse como:
+
+#+BEGIN_QUOTE
+  $\frac{1}{R_{c}(s)} = \chi(s) = \left| {{\overset{\sim}{\mathbf{r}}}^{''}(s)} \right|$
+#+END_QUOTE
+
+*** Curvas planas
+
+Para una curva plana cuya ecuación pueda escribirse en coordenadas
+cartesianas
+$(x,y)\,$
+como
+$x = x(t);y = y(t)$
+donde t es un parámetro arbitrario, la expresión para el radio de
+curvatura se reduce a:
+
+$R_{c} = \frac{\left\lbrack {\left( \frac{dx}{dt} \right)^{2} + \left( \frac{dy}{dt} \right)^{2}} \right\rbrack^{\frac{3}{2}}}{\left| {\frac{dx}{dt}\frac{d^{2}y}{dt^{2}} - \frac{dy}{dt}\frac{d^{2}x}{dt^{2}}} \right|}$
+
+En caso que pueda escribirse
+$y = f(x)\,$
+de tal modo que para cada punto de la curva exista un único valor de
+$x$
+entonces puede tomarse a
+$x$
+como el parámetro arbitrario, y el radio de curvatura se puede calcular
+simplemente como:
+
+#+BEGIN_QUOTE
+  $R_{c} = \frac{\left\lbrack {1 + \left( \frac{df}{dx} \right)^{2}} \right\rbrack^{\frac{3}{2}}}{\left| \frac{d^{2}f}{dx^{2}} \right|}$
+#+END_QUOTE
+
+*** Demostración
+
+En primer lugar tenemos la ecuación paramétrica de la curva
+$\gamma(t):\mathbb{R}\rightarrow\mathbb{R}^{n}$
+de la que queremos deducir su radio de curvatura
+$\rho$
+Ahora debemos buscar la ecuación paramétrica de la circunferencia
+($g:\mathbb{R}\rightarrow\mathbb{R}^{n}$
+que toma el mismo valor que
+$\gamma$
+y además satisfaga que
+$g^{\prime}(t) = \gamma^{\prime}(t)$
+y
+$g^{''}(t) = \gamma^{''}(t)$
+para cada
+$t$
+fijado. Claramente el radio no depende de la posición
+($\gamma(t)$
+solo de la velocidad
+($\gamma^{\prime}(t)$
+y la aceleración
+($\gamma^{''}(t)$
+A partir de dos vectores
+$v$
+y
+$w$
+solo se pueden obtener tres escalares independientes, que son:
+$v \cdot v$
+$w \cdot w$
+y
+$w \cdot v$
+. Por lo tanto el radio de curvatura dependerá únicamente de los
+escalares
+$|\gamma^{\prime}(t)|^{2}$
+y
+$\gamma^{\prime}(t) \cdot \gamma^{''}(t)$
+.
+
+La ecuación paramétrica general para una circunferencia en
+$\mathbb{R}^{n}$
+viene dada por
+
+$g(u) = A\cos\left( {h(u)} \right) + B\sin\left( {h(u)} \right) + C$
+
+donde
+$C \in \mathbb{R}^{n}$
+es el centro de la circunferencia (aunque es irrelevante, por
+desaparecer al derivar),
+$A,B \in \mathbb{R}^{n}$
+son vectores perpendiculares le módulo
+$\rho$
+(es decir
+$A \cdot A = B \cdot B = \rho^{2} \land A \cdot B = 0$
+y
+$h:\mathbb{R}\rightarrow\mathbb{R}$
+es una función cualquiera doblemente diferenciable en
+$t$
+
+Derivando
+
+#+BEGIN_QUOTE
+  $\begin{matrix}
+  {|g^{\prime}|^{2}} & = & {\rho^{2}(h^{\prime})^{2}} \\
+  {g^{\prime} \cdot g^{''}} & = & {\rho^{2}h^{\prime}h^{''}} \\
+  {|g^{''}|^{2}} & = & {\rho^{2}\left( {(h^{\prime})^{4} + (h^{''})^{2}} \right)} \\
+  \end{matrix}$
+#+END_QUOTE
+
+si ahora igualamos a las derivadas correspondientes de
+$\gamma$
+obtenemos
+
+#+BEGIN_QUOTE
+  $\begin{matrix}
+  {|\gamma^{\prime 2}(t)|} & = & {\rho^{2}h^{\prime 2}(t)} \\
+  {\gamma^{\prime}(t) \cdot \gamma^{''}(t)} & = & {\rho^{2}h^{\prime}(t)h^{''}(t)} \\
+  {|\gamma^{''2}(t)|} & = & {\rho^{2}(h^{\prime 4}(t) + h^{''2}(t))} \\
+  \end{matrix}$
+#+END_QUOTE
+
+que se trata de un sistema en
+$\rho$
+$h^{\prime}(t)$
+y
+$h^{''}(t)$
+que permite despejar
+$\rho$
+obteniendo finalmente que
+
+$\rho = \frac{|\gamma^{\prime}|^{3}}{\sqrt{|\gamma^{\prime}|^{2}\;|\gamma^{''}|^{2} - (\gamma^{\prime} \cdot \gamma^{''})^{2}}}$
+.
+
+** Referencias
+
+1. Spiegel, M. & Abellanas, 1988, p. 121
+
+*** Bibliografía
+
+- Girbau, J.: "/Geometria diferencial i relativitat/", Ed. [[/wiki/Universidad_Aut%C3%B3noma_de_Barcelona][Universitat Autònoma de Barcelona]], 1993.
+  ISBN 84-7929-776-X.
+- Spiegel, M. & Abellanas, L.: "/Fórmulas y tablas de matemática aplicada/", Ed. McGraw-Hill, 1988.
+  ISBN 84-7615-197-7.
+
+*** Enlaces externos
+
+- Weisstein, Eric W.
+  [[http://mathworld.wolfram.com/PrincipalCurvatures.html][«Principal Curvatures»]]. En Weisstein, Eric W. /MathWorld/
+  (en inglés). Wolfram Research. 
+- Weisstein, Eric W.
+  [[http://mathworld.wolfram.com/PrincipalRadiusofCurvature.html][«Principal Radius of Curvature»]]. En Weisstein, Eric W.
+  /MathWorld/ (en inglés).
+  Wolfram Research. 
+- [[http://proyectodescartes.org/uudd/materiales_didacticos/curvatura-JS/index.htm][Introducción a la curvatura de curvas planas.]]
+
+*** Licencia
+
+El texto está disponible bajo la
+[[https://es.wikipedia.org/wiki/Wikipedia:Texto_de_la_Licencia_Creative_Commons_Atribuci%C3%B3n-CompartirIgual_3.0_Unported][Licencia Creative Commons Atribución Compartir Igual 3.0]];
+pueden aplicarse cláusulas adicionales.
+
+* Footnotes
+
+[fn:1] Spiegel, M. & Abellanas, 1988, p. 121
+
+

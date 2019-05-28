@@ -1,0 +1,84 @@
+% Created 2019-05-28 mar 10:50
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage[margin=2cm]{geometry}
+\author{javier}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={javier},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.1 (Org mode 9.1.9)}, 
+ pdflang={English}}
+\begin{document}
+
+
+\section{Binomial series}
+\label{sec:orgfb57b45}
+
+The \textbf{binomial series} is the Maclaurin series for the function
+\(f\)
+given by
+\(f(x) = (1 + x)^{\alpha}\)
+where
+\(\alpha \in \mathbb{C}\)
+is an arbitrary complex number. Explicitly,
+
+$$\begin{matrix}
+{(1 + x)^{\alpha}} & {= \sum\limits_{k = 0}^{\infty}\;{(\frac{\alpha}{k})}\; x^{k}\qquad\qquad\qquad(1)} \\
+ & {= 1 + \alpha x + \frac{\alpha(\alpha - 1)}{2!}x^{2} + \cdots,} \\
+\end{matrix}$$
+
+and the binomial series is the power series on
+the right hand side of (1), expressed in terms of the
+(generalized) binomial coefficients
+
+$${(\frac{\alpha}{k})}:=\frac{\alpha(\alpha - 1)(\alpha - 2)\cdots(\alpha - k + 1)}{k!}$$
+
+\subsection{Special cases}
+\label{sec:orgecbf178}
+
+If \(\alpha\) is a nonnegative integer \(n\), then the \((n + 2)^{th}\) term and all
+later terms in the series are 0, since each contains a factor
+\(n-n\); thus in this case the series is finite and gives the
+algebraic binomial formula.
+
+The following variant holds for arbitrary complex \(\beta\), but is especially
+useful for handling negative integer exponents in (1):
+
+$$\frac{1}{(1 - z)^{\beta + 1}} = \sum\limits_{k = 0}^{\infty}{(\frac{k + \beta}{k})}z^{k}.$$
+
+To prove it, substitute \(x=-z\) in (1) and apply a binomial
+coefficient identity, which is,
+
+$${(\frac{- \beta - 1}{k})} = ( - 1)^{k}{(\frac{k + \beta}{k})}.$$
+
+\subsection{Summation of the binomial series}
+\label{sec:org83a9472}
+
+The usual argument to compute the sum of the binomial series goes as
+follows. Differentiating term-wise the binomial series within the
+convergence disk \(|x| < 1\) and using formula (1), one has that the sum
+of the series is an analytic function
+solving the ordinary differential equation \((1+x)u'(x) = \alpha u(x)\)
+with initial data \(u(0) = 1\). The unique solution of this
+problem is the function \(u(x) = (1+x)^{\alpha}\), which is therefore
+the sum of the binomial series, at least for \(|x|<1\). The equality
+extends to \(|x|=1\) whenever the series converges, as a consequence of
+Abel's theorem and by continuity of \((1+x)^{\alpha}\).
+\end{document}
