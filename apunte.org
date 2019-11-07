@@ -1,0 +1,130 @@
+* Geometría del Elipsoide y cálculos Geodésicos.
+
+** La forma de la tierra 
+
+Es facil para un observador informado arribar a un modelo esférico para
+la forma de la tierra. Partiendo de esta definición, podría desarrollar
+la solución de los diversos problemas que plantea la medición sobre la 
+superficie de la esfera -- los llamados problemas geodésicos -- y
+construir una poligonal cerrada sobre la tierra, verificando si el error
+obtenido al regresar al punto de origen es compatible con la precisión
+de los intrumentos.
+
+::: derecha
+
+[fig:poligonalgeodesica] [[./imgs/geopoly.png]]
+
+:::::
+
+Tambipen podría diseñar experiencias relativamente simples,
+y aplicarlas a distintos puntos ubicados en la tierra en
+forma arbitraria.
+
+Cualquiera de estas metodologías le llevará al hallazgo de que el
+modelo esférico no se ajusta perfectamente a la tierra. En el primer
+caso obtendra un error de cierre mayor al que correspondería con el
+instrumental utilizado, mientras que en el segundo
+observará que la estimación del radio terrestre varía con la latitud.
+
+Del análisis de estas mediciónes, y a partir de la consideración de la
+influencia de la rotación terrestre sobre la distribución de su masa y
+sobre su propio campo gravitatorio, a la luz de las teorías
+desarrolladas por Isaac Newton, la geodesia desarrolló un modelo
+geométrico más apropiado que el intuitivo. Este modelo es el de el
+elipsoide de revolución.
+
+** El elipsoide de revolución
+
+*El elipsoide es una superficie* cuádrica, definida en forma canónica
+por la ecuación:
+
+$$\frac{x^2}{a_1^2}+\frac{y^2}{a_2^2}+\frac{z^2}{b^2}=1$$
+
+::: derecha
+
+[fig:sistemas] a) [[./imgs/triaxial.png]] b) [[./imgs/elipsoide.png]]
+
+CC BY-SA 4.0, Reelaborado a partir del trabajo en
+https://commons.wikimedia.org/w/index.php?curid=45585493
+
+::::::
+
+*El elipsoide de revolución* utilizado en geodesia es en particular
+el caso en que $a_1=a_2$,
+tomando su nombre del hecho de que puede ser construido
+a partir de hacer girar la elipse de ecuación
+
+$${\frac{x^{{2}}}{a^{{2}}}+\frac{z^{{2}}}{b^{{2}}}=1}$$
+
+perteneciente al plano $XZ$, alrededor del eje $Z$, coincidente con el
+eje menor de la elipse.
+
+Los ejes $a$ y $b$ bastan para definir a la elipse y al elipsoide de
+revolución correspondiente. Sin embargo, existen otros parámetros que se
+utilizan normalmente para definir sus propiedades.
+
+::: tabla
+
+| parámetro                | símbolo       | expresión                    |
+|--------------------------+---------------+------------------------------|
+| aplastamiento            | $\alpha$, $f$ | \frac{a-b}{a}                |
+| inversa de aplastamiento | $1/f$         | $1/f = \frac{a}{a-b}$        |
+| exentricidad lineal      | E             | \sqrt{a^2-b^2}               |
+| primera exenticidad      | $e$           | $e^2 = \frac{a^2-b^2}{a^2}$  |
+| segunda exenticidad      | $e'$          | $e'^2 = \frac{a^2-b^2}{b^2}$ |
+
+::::::
+
+** Geometría del elipsoide
+   
+*** Coordenadas
+
+*Para trabajar sobre el elipsoide* con un enfoque orientado ala geodesia,
+partiremos de la definición de la latitud en base a la linea perpendicular
+a la supericia a la que podemos llamar vertical
+elipsoidal, y definiremos la longitud y el azimut en forma análoga a como se
+hace al trabajar con coorenadas geográficas esféricas.
+
+Estas definiciones serán el punto de partida para resolver en
+forma teórica los problemas
+geodésicos, dentro de los cuales ingresaran como parámetro las
+longitudes de los ejes $a,b$ en lugar de un único radio.
+
+::: tabla
+
+| Latitud     | ángulo entre la vertical elipsoidal y el plano XY             |
+|-------------+---------------------------------------------------------------|
+| Longitud    | ángulo diedro entre el plano meridiano que contiene al punto  |
+|             | analizado y el plano meridiano de origen --Un plano meridiano |
+|             | es aquel que contiene al eje Z--                              |
+|-------------+---------------------------------------------------------------|
+| azimut a->b | ángulo diedro entre el plano meridiano del lugar a y el plano |
+|             | vertical que contiene al vector tangente a la trayectoria     |
+|             | geodésica que une los puntos a y b sobre la superficie del    |
+|             | elipsoide.                                                    |
+
+::::::
+
+*** Latitud elipsoidal.
+
+Partiendo de las coordenadas cartesianas ${x;y;z}$ de un punto sobre el 
+elipsoide, puede calcularse la latitud a partir de reconsturir la posisión
+de la recta tangente a la elipse y de la vertical, perpendicular a esta.
+
+Considerando el plano meridiano de un punto, consideraremos las coordenadas
+${z;x'}$ de un punto dentro de este plano, siendo $x'$ el eje que surje de
+la intersección del plano meridiano con el plano xy.
+
+Estas coordenadas, para ubicarse sobre la superficie de la elipse, deben
+cumplir que
+
+$$\frac{z^2}{b^2}+\frac{x'^2}{a^2}=1,$$
+
+de manera que, considerando solo el caso $z > 0$, obtenemos la ecuación
+
+$$z = \sqrt{b^2 - \frac{x'^2\,b^2}{a^2}}$$
+
+se puede derivar esta expresión con respecto a $x'$ para obtener la pendiente
+te de una recta tangente al la elipse meridiana.
+
+$$\frac{\partial{z}}{\partial{x'}} = \frac{1}{2}
