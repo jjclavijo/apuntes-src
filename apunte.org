@@ -2,20 +2,45 @@
 
 *** Introducción
 
+Cuando se trata de realizar una realizar una reperesentación de un
+área extensa de la tierra con una precisión alta que permita la
+correcta medición de magnitudes sobre la misma, como es el caso de la
+carta topográfica, se plantea un problema de características muy
+particulares.
+
+Se necesitará una representación que tenga una deformación moderada
+y que para un área de trabajo acotada la misma sea homogénea.
+
+Por esto, la primer condición que surge es la de utilizar una
+proyección conforme. Sin embargo, una representación de la tierra en
+una sola proyección conforme lleva a grandes deformaciónes en los
+extremos de la representación.
+
+Para salvar este problema, se puede aprovechar la simetría de rotación
+que presenta el elipsoide, y desarrollar un sistema que explote esa
+simetría de forma que, con solo variar un parámetro sea adaptable a
+cualquier zona de trabajo. El sistema adecuado para esto es el que
+parte de un meridiano arbitrario, y representándolo recto y en escala
+real, construye la proyección conforme a partir de el. Considerando
+que, iniciando desde cualquier meridiano la forma geométrica del
+elipsoide es idéntica, el único cámbio en el calculo que se efectuará
+para elegir este << Meridiano Centrall >> será aplicar una constante a
+las longitudes antes de ingresar a las fórmulas de cálculo.
+
+Esta cualidad de partir de un meridiano recto y a escala real hace que
+la proyección sea al análogo rotado de la proyección de Mercator, de
+forma tal que la tangencia no es ahora el ecuador sino un meridiano.
+Se ve entonces que las deformaciones dependen solamente del
+apartamiento del meridiano central y son simétricas respecto del mismo.
+
+::: derecha 
 La teoría de la proyección conforme del elipsoide terrestre es
 establecida por primera vez por el matemático Johann Karl Friedrich
 Gauss (1777-1855) entre los años 1816 y 1827.
 
 En el año 1821, Gauss aplicó su proyección en trabajos geodésicos en el
 estado de Hannover.
-
-En este sistema la superficie intermedia de proyección en un cilindro
-tangente a la largo del meridiano central de la región que se quiere
-representar; es apropiado para territorios cuya dirección de máxima
-amplitud es en el sentido de las latitudes.
-
-Las deformaciones dependen solamente del apartamiento del meridiano
-central y son simétricas respecto del mismo.
+::::::
 
 Cuando se trata de representar territorios muy extendidos en el sentido
 de las longitudes, se presentarán deformaciones importantes en los
@@ -35,25 +60,44 @@ El geodesta L. Krüger del Instituto Geodésico de Postdam, introdujo en
 nombre de la proyección.
 #+END_COMMENT
 
-Esta proyección busca fórmulas que den la transformación conforme de
-puntos del elipsoide en puntos del plano.
+Dada la cualidad específica del elipsoide, de que las trayectorias
+geodésicas perpendiculares a un meridiano no son una construcción
+geométrica trivial, se recurre para el desarrollo de la proyección a
+un método aproximado, partiendo de las restricciónes fijadas.
 
-Los puntos del elipsoide están caracterizados por sus coordenadas
-geográficas latitud y longitud, y los puntos del plano por sus
-coordenadas planas rectangulares X e Y. Se trata de establecer una
-relación funcional entre el sistema elipsóidico y el plano de manera tal
-que la representación sea conforme.
+1. El meridiano central es recto y tiene magnitud real, es decir:
 
-Esta transformación se lleva a cabo mediante una función de variable
-compleja e imponiendo ciertas condiciones previas.
+$$y(\lambda = 0,\varphi) = 0$$
+$$x(\lambda = 0,\varphi) = \overset{\varphi}{\underset{-\pi /2}{\int }}{d\varphi \sqrt{\underline{\varphi}\cdot\underline{\varphi}} }$$
 
-La imagen del meridiano central de la faja es el eje X, tomándolo con
-sentido positivo hacia el norte.
+2. La proyección debe ser conforme.
 
-Las magnitudes lineales sobre el meridiano central aparecen sin
-deformación.
+Partiendo del supuesto --- que es demostrable --- de que la proyección
+es única, se puede diseñar este camino para econtrar sus ecuaciones
+sin tener que tratar con líneas goedésicas no triviales:
 
-*** Proyección Gauss-Krüger.
+1. Construir una transformación conforme de todo el espacio geográfico
+   al plano que sí trabaje en direcciónes perpendiculares que
+   representen líneas geodésicas triviales. La llamaremos $T_0$
+
+2. Construir una familia de proyecciónes a partir de una familia de
+   transformaciones $G_i$ conformes que se aplican a $T_0$.
+   
+3. Restringir la forma de $G_i$ hasta obtener $G_0$, la transformación
+   que cimple con la condición 1.
+
+La solución del paso 1 puede hacerse trabajando en la dirección de
+paralelos y meridianos.
+
+Para el paso 2 puede utilizarse como $G_i$ las funciones continuas de
+variable compleja, que son conformes en todos los casos.
+
+Se puede hallar una aproximación a $G_0$ partiendo de un polinomio de
+taylor de una $G_i$ genérica sobre el meridiano central, poniendo
+condiciones a sus derivadas para que cumplan 1.
+
+#+BEGIN_COMMENT
+*** Desarrollo.
 
 Dados dos puntos sobre el elipsoide infinitamente próximos (figura
 IX.2), ambos vienen caracterizados por sus coordenadas geográficas
@@ -73,6 +117,7 @@ condición que la representación sea conforme. De acuerdo con lo
 anteriormente expuesto se hace uso de la funciones de variable compleja
 porque ellas satisfacen dicha condición.
 
+#+END_COMMENT
 
 *** Al margen: Cauchy Riemman y conservar los angulos.
 
@@ -122,6 +167,26 @@ $$\lim_{z\to z_0}{f(z)-f(z_0)\over z-z_0}=A+iB\ .$$
 [[./img/prueba_polinomio_cauchy.jpg]]
 
 *** Desarrollo
+
+Partiendo de la parametrización conocida del elipsoide,
+$\varphi,\lambda$, se busca T_0 de forma que las nuevas coordenadas
+$q,l$ resulten en una aplicación conforme del elipsoide sobre el plano.
+Una forma de garantizar esto es garantizar que
+$\hat{\underline{q}}\cdot\hat{\underline{l}}=0$, $\underline{q}\cdot\underline{l}=0$ y que $\underline{q} \cdot \underline{q} = \underline{l} \cdot \underline{l}$
+
+Luego, se ve que $q=f(\varphi)$, $l=g(\lambda)$ garantizan lo primero,
+luego se puede fijar $l=\lambda$ y plantear:
+
+$$ \underline{q} \cdot \underline{q} = 
+\|\frac{\partial{\underline{r}}}{\partial{\varphi}}\|
+\frac{\partial{\varphi}}{\partial{q}} = \underline{l} \cdot
+\underline{l} = \|\frac{\partial{\underline{r}}}{\partial{\lambda}}\| $$
+
+De manera que, despejando, y sabiendo que
+$\|\frac{\partial{\underline{r}}}{\partial{\lambda}}\| = M$ y
+$\|\frac{\partial{\underline{r}}}{\partial{\varphi}}\| = N\,cos(\varphi)$ :
+
+$$ \frac{\partial{q}}{\partial{\varphi}} = \frac{M}{N\,cos(\varphi)} $$
 
 Se forman para cada plano las variables complejas:
 
