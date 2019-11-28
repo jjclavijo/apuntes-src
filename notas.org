@@ -1,0 +1,13 @@
+* Pantallaso
+
+1- Analogia con mercator
+
+2- Parto de ...
+
+3- Construyo una familia de funciones con parámetros ajustables que garanticen conformidad.
+
+4- Pruebo que la transformación es unica
+
+5- Aproximo la funcion buscada con taylor.
+
+TAYLOR EN VARIABLE COMPLEJA, OJO.
