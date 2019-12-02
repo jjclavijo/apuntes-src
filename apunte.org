@@ -24,7 +24,7 @@ parte de un meridiano arbitrario, y representándolo recto y en escala
 real, construye la proyección conforme a partir de el. Considerando
 que, iniciando desde cualquier meridiano la forma geométrica del
 elipsoide es idéntica, el único cámbio en el calculo que se efectuará
-para elegir este << Meridiano Centrall >> será aplicar una constante a
+para elegir este << Meridiano Central >> será aplicar una constante a
 las longitudes antes de ingresar a las fórmulas de cálculo.
 
 Esta cualidad de partir de un meridiano recto y a escala real hace que
@@ -96,75 +96,45 @@ Se puede hallar una aproximación a $G_0$ partiendo de un polinomio de
 taylor de una $G_i$ genérica sobre el meridiano central, poniendo
 condiciones a sus derivadas para que cumplan 1.
 
-#+BEGIN_COMMENT
-*** Desarrollo.
+*** Apartado: Las condiciones de Cauchy Riemman y conservar los angulos.
 
-Dados dos puntos sobre el elipsoide infinitamente próximos (figura
-IX.2), ambos vienen caracterizados por sus coordenadas geográficas
-latitud y longitud. Teniendo en cuenta que ambos puntos son
-infinitamente próximos, se puede considerar que la parcela elipsóidica
-que abarcan no tienen curvatura, es decir que es un plano que se
-denominará "z", es decir que la superficie elemental
-$$\left(d\varphi,d\lambda \right)$$ se supone plana.
 
-Ambos puntos tienen su imagen plana, cuyas posiciones se caracterizan
-por sus coordenadas planas ortogonales X e Y en la carta, que se
-denominará plano de las "u".
-
-Se trata de establecer la relación funcional entre la superficie
-elipsóidica elemental con la correspondiente superficie plana, con la
-condición que la representación sea conforme. De acuerdo con lo
-anteriormente expuesto se hace uso de la funciones de variable compleja
-porque ellas satisfacen dicha condición.
-
-#+END_COMMENT
-
-*** Al margen: Cauchy Riemman y conservar los angulos.
-
-The statement as formulated is false. In the first place, a function
-is holomorphic on an *open set* and not "at a point $z_0$".
-
-Now it is easy to define a real differentiable function $f$ whose $df(z_0)$
-at some point $z_0$ is a similarity, but $f$ is nowhere holomorphic. Consider, e.g., the function
-
-$$f(z):= z+\bar z^2= (x+x^2-y^2)+i(y-2 x y)\qquad(z:=x+iy)\ .$$
-Here $df(0)={\rm id}$, but $f$ is definitely  not holomorphic.
-
-When the function $f$ fulfills the stated condition in *every* point
-$z$ of its domain of definition $\Omega$ then $f$ is indeed holomorphic.
-
-This can be shown as follows:
-
-Let
+Supongamos una $f(z) \mathds{C}\rightarrow\mathds{C}$, si expresamos
+la matriz jacobiana en un punto $z_0$ como:
 
 $$\bigl[df(z_0)\bigr]=\left[\begin{matrix}a&b \cr c& d \cr\end{matrix}\right]\ , \qquad ad-bc>0\ .$$
 
-If $df(z_0)$ preserves angles then the images of $(1,0)$ and $(0,1)$ must be orthogonal,
-whence $ab+cd=0$. Now the images of $(1,1)$ and $(-1,1)$ have to be orthogonal,
-too; and this implies $a^2+c^2=b^2+d^2$. It is now easy to see that the
-matrix $\bigl[df(z_0)\bigr]$ is of the form
+Veremos que, si $df(z_0)$ conserva los ángulos, las imágenes de
+$(1,0)$ y $(0,1)$ deben ser ortogonales, es decir que
+$$ab+cd=0.$$
+Luego, las imágenes de $(1,1)$ y $(-1,1)$ deben serlo también,
+implicando que $$a^2+c^2=b^2+d^2.$$
+
+Veremos entonces que la matriz $\bigl[df(z_0)\bigr]$ tiene la forma
 
 $$\bigl[df(z_0)\bigr]=\left[\begin{matrix}\rho\cos\phi &-\rho\sin\phi \cr \rho\sin\phi& \rho\cos\phi \cr\end{matrix}\right]\ , \qquad \rho>0$$
 
-for some $\phi$, whence is the constant multiple of an orthogonal matrix (of determinant $+1$).
+Para algún ángulo $\phi$, siendo el multiplo de una matriz ortogonal
+(de determinante $+1$).
 
-It follows that there are numbers $A$ and $B$ such that
+Podremos ver que existen los numeros $A$ y $B$ de manera que
 
 $$\bigl[df(z_0)\bigr]=\left[\begin{matrix}A&-B \cr B& A \cr\end{matrix}\right]\ , \qquad A^2+B^2>0\ .$$
 
-Interpreting this in the complex sense this means that we in fact have
+Interpretando esta situación como una operación en números complejos,
+vemos que:
 
 $$f(z)-f(z_0)=(A+iB)(z-z_0) + o(z-z_0)\qquad(z\to z_0)\ ,$$
 
-which is the same thing as
+que es equivalente a decir:
 
 $$\lim_{z\to z_0}{f(z)-f(z_0)\over z-z_0}=A+iB\ .$$
 
-*** Más al margen:
-
-#+ATTR_ORG: :width 800
-#+ATTR_LATEX: :width 8in
-[[./img/prueba_polinomio_cauchy.jpg]]
+que nos lleva a decir que las condiciones de Cauchy Riemman garantizan
+la conformidad de una funcion que va de $\mathds{R}^2$ sobre si mismo,
+y que cualquier funcion de variable compleja, donde de interpreta a
+$\mathds{R}^2$ como el plano complejo $\mathds{C}$, cumple con dichas
+condiciones.
 
 *** Desarrollo
 
@@ -178,41 +148,55 @@ Luego, se ve que $q=f(\varphi)$, $l=g(\lambda)$ garantizan lo primero,
 luego se puede fijar $l=\lambda$ y plantear:
 
 $$ \underline{q} \cdot \underline{q} = 
-\|\frac{\partial{\underline{r}}}{\partial{\varphi}}\|
+\left|\frac{\partial{\underline{r}}}{\partial{\varphi}}\right|
 \frac{\partial{\varphi}}{\partial{q}} = \underline{l} \cdot
-\underline{l} = \|\frac{\partial{\underline{r}}}{\partial{\lambda}}\| $$
+\underline{l} = \left|\frac{\partial{\underline{r}}}{\partial{\lambda}}\right| $$
 
 De manera que, despejando, y sabiendo que
-$\|\frac{\partial{\underline{r}}}{\partial{\lambda}}\| = M$ y
-$\|\frac{\partial{\underline{r}}}{\partial{\varphi}}\| = N\,cos(\varphi)$ :
+$\left|\frac{\partial{\underline{r}}}{\partial{\lambda}}\right| = M$ y
+$\left|\frac{\partial{\underline{r}}}{\partial{\varphi}}\right| = N\,cos(\varphi)$ :
 
 $$ \frac{\partial{q}}{\partial{\varphi}} = \frac{M}{N\,cos(\varphi)} $$
 
-Se forman para cada plano las variables complejas:
-
-$$z=\varphi + i \lambda$$
-
-$$u=X+iY$$
-
-Ambas variables están ligadas por la función de variable
-compleja:
-
-$$u=f\left(z\right)$$
-
-O sea:
+$$\int d\varphi \frac{\partial{q}}{\partial{\varphi}} = \int d\varphi \frac{M}{N\,cos(\varphi)} $$
 
 #+NAME: eqn:1
 \begin{equation}
-X+iY=f\left(\varphi +\mathit{i\lambda}\right)
+q = \int d\varphi \frac{M}{N\,cos(\varphi)}
 \end{equation}
 
-Formando la variable compleja $$\varphi +i\lambda$$ no se ha elegido la
-misma unidad lineal para la parte real y la parte imaginaria de la
-variable. Si se incrementan en 1” por ejemplo la latitud y longitud, el
-arco de meridiano es siempre el mismo para cualquier latitud, no así el
-arco de paralelo que disminuye a medida que la longitud aumenta.
+Integrando [[eqn:1]] obtendremos, para un punto:
 
-Los arcos de meridiano y paralelo en el elipsoide son respectivamente:
+$$q=ln\left[tg\left(45^\circ+\frac{\varphi
+}{2}\right)\right]-\frac{e}{2}\cdot ln\left(\frac{1-e\cdot
+sen\left(\varphi \right)}{1+e\cdot
+sen\left(\varphi \right)}\right)$$
+
+En el caso de la esfera $M=N$, e=1, luego, el segundo término
+desaparece, siendo que $ln(1)=0$
+
+Luego, la funcion de trabsformación que buscamos se define como
+$f: z\in\mathds{C}\rightarrow u\in\mathds{C}$
+
+Donde z y u se relacionan con las parametrizaciones elegidas de los
+espacios de origen y destino siendo $$z=q + i l$$ $$u=X+iY,$$ y
+
+#+NAME: eqn:2
+\begin{equation}
+X+iY=f\left(q+il\right)
+\end{equation}
+
+::: apartado
+
+Si se forma una hipotetica variable compleja $$\varphi +i\lambda$$ no
+se ha elegido la misma unidad lineal para la parte real y la parte
+imaginaria de la variable. Por ejemplo, si se incrementan en 1” la
+latitud y longitud el arco de meridiano es siempre el mismo para
+cualquier latitud y el arco de paralelo disminuye a medida que la
+longitud aumenta.
+
+Los arcos de meridiano y paralelo en el elipsoide en funcion de las
+unidades resultantes son respectivamente:
 
 $$dm=M\cdot d\varphi$$ 
 $$dp=N\cdot cos\left(\varphi \right)\cdot d\lambda$$ 
@@ -246,54 +230,25 @@ y la longitud están en la relación:
 
 $$\frac{dp}{dm}=\frac{M}{N\cdot cos\left(\varphi \right)}$$
 
-Para igualar los arcos de meridiano y paralelo se sustituye la latitud
-"$\varphi$" por una nueva variable "q" llamada latitud isométrica,
-contada también a partir del ecuador de manera que el elemento de
-meridiano se exprese:
-
-$$M\cdot d\varphi =N\cdot cos\left(\varphi \right)\cdot dq$$
-
-Porque se desea que para iguales incrementos de latitud isométrica
-y longitud:
+Al obtener la parametrización conforme $q,l$, se igualan los arcos
+de meridiano y paralelo, ante un idéntico incremento diferencial:
 
 $$dq=d\lambda$$
 
 Se produzcan iguales incrementos lineales sobre
-meridianos y paralelos. Por lo tanto:
+meridianos y paralelos. Por ejemplo:
 
-#+NAME: eqn:2
-\begin{equation}
-dq=\frac{M\cdot d\varphi }{N\cdot cos\left(\varphi \right)}
-\end{equation}
-
-En el caso de una esfera sonde M=N=R se tiene que:
-
-#+NAME: eqn:3
-\begin{equation}
-dq=\frac{\mathit{d\varphi}}{cos\left(\varphi \right)}
-\end{equation}
-
-Si por ejemplo 
 $$dq=\mathit{d\lambda}=1''$$
+
 , en la latitud de 60 se tiene que:
 
 $$dm=R\cdot d\varphi =R\cdot cos\left(\varphi \right)\cdot dq=15m$$
 $$dm=R\cdot d\varphi =R\cdot cos\left(\varphi \right)\cdot dq=15m$$
 
-Integrando las [[eqn:2]] y [[eqn:3]]:
+Por este motivo a la variable q se la denomina latitud isométrca
+\textit{--- de igual medida ---.}
 
-$$q=ln\left[tg\left(45^\circ+\frac{\varphi
-}{2}\right)\right]-\frac{e}{2}\cdot ln\left(\frac{1-e\cdot
-sen\left(\varphi \right)}{1+e\cdot
-sen\left(\varphi \right)}\right)$$
-$$q=ln\left[tg\left(45^\circ+\frac{\varphi
-}{2}\right)\right]-\frac{e}{2}\cdot ln\left(\frac{1-e\cdot
-sen\left(\varphi \right)}{1+e\cdot
-sen\left(\varphi \right)}\right)$$ Haciendo el cambio de variable en la
-ecuación [[eqn:1]] se tiene que:
-
-$$X+iY=f\left(q+\mathit{i\lambda
-}\right)$$ (X.9)
+::::::
 
 En esta proyección no se busca la representación del elipsoide entero,
 sino de una faja comprendida entre dos meridianos no muy distanciados.
@@ -307,18 +262,16 @@ se efectúa otro cambio de variable ya que las longitudes se cuentan a
 partir del meridiano central, positiva al este y negativa al oeste del
 mismo, longitud que se denominará "l", tal que:
 
-$$l=\lambda -\lambda _{M.C.}$$ Se forma entonces la función de variable
-compleja:
+$$l=\lambda -\lambda _{M.C.}$$
 
-$$X+iY=f\left(q+il\right)$$ (X.10)
+queda claro que "q" y "l" caracterizan la situación de cualquier punto
+sobre la faja del elipsoide, y que en X e Y son las coordenadas planas
+de la representación de ese punto en el plano de la proyección.
 
-donde "q" y "l" caracterizan la situación de cualquier punto sobre la
-faja del elipsoide, y que en X e Y son las coordenadas planas de la
-representación de ese pinto en el plano de la proyección.
-
-Para que esta proyección esté completamente determinada, se impone una
-condición que exige que los puntos del meridiano central sean
-representados sin deformación lineal.
+Tal como se mencionó anteriormente, para que esta proyección esté
+completamente determinada, se impone una condición que exige que los
+puntos del meridiano central sean representados sin deformación
+lineal.
 
 Además la imagen rectificada del meridiano central es el eje de las X de
 la representación y para el hemisferio sur de origen de coordenadas (0,0)
