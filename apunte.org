@@ -96,6 +96,7 @@ Se puede hallar una aproximación a $G_0$ partiendo de un polinomio de
 taylor de una $G_i$ genérica sobre el meridiano central, poniendo
 condiciones a sus derivadas para que cumplan 1.
 
+::: Apartado
 *** Apartado: Las condiciones de Cauchy Riemman y conservar los angulos.
 
 
@@ -136,6 +137,7 @@ y que cualquier funcion de variable compleja, donde de interpreta a
 $\mathds{R}^2$ como el plano complejo $\mathds{C}$, cumple con dichas
 condiciones.
 
+::::::
 *** Desarrollo
 
 Partiendo de la parametrización conocida del elipsoide,
@@ -175,7 +177,7 @@ sen\left(\varphi \right)}\right)$$
 En el caso de la esfera $M=N$, e=1, luego, el segundo término
 desaparece, siendo que $ln(1)=0$
 
-Luego, la funcion de trabsformación que buscamos se define como
+Luego, la funcion de transformación que buscamos se define como
 $f: z\in\mathds{C}\rightarrow u\in\mathds{C}$
 
 Donde z y u se relacionan con las parametrizaciones elegidas de los
@@ -238,7 +240,7 @@ $$dq=d\lambda$$
 Se produzcan iguales incrementos lineales sobre
 meridianos y paralelos. Por ejemplo:
 
-$$dq=\mathit{d\lambda}=1''$$
+$$dq={d\lambda}=1''$$
 
 , en la latitud de 60 se tiene que:
 
@@ -250,22 +252,26 @@ Por este motivo a la variable q se la denomina latitud isométrca
 
 ::::::
 
-En esta proyección no se busca la representación del elipsoide entero,
-sino de una faja comprendida entre dos meridianos no muy distanciados.
-Teóricamente se podría representar el elipsoide entero en esta forma,
-pero serían inevitables grandes dilataciones lineales a medida que los
-puntos se apartan del meridiano central.
+Tal como se mencionara en la introducción, una de las principales
+cualidades de esta proyección es la posibilidad de ajustar la línea de
+tangencia a la zona de trabajo.
+Es posible representar el elipsoide entero en esta forma en un espacio
+finito, gracias a que las lineas geodésicas perpendiculares a un
+meridiano no convergen a un punto sino a una linea.
+Sin embargo, al hacer esto se presentan grandes dilataciones lineales
+a en los puntos que más se apartan del meridiano central.
 
-El origen de las longitudes no es el meridiano de Greenwich sino el
-meridiano central de la faja que se pretende representar, de manera que
-se efectúa otro cambio de variable ya que las longitudes se cuentan a
+Para adaptar el origen de la proyección a la zona que se pretende
+representar se efectúa un simple cambio de variable sumando a
+$\lambda$ una constante, de modo que las longitudes se cuentan a 
 partir del meridiano central, positiva al este y negativa al oeste del
-mismo, longitud que se denominará "l", tal que:
+mismo, de esta manrera:
 
-$$l=\lambda -\lambda _{M.C.}$$
+$$l=\lambda -\lambda_{M.C.}$$
 
-queda claro que "q" y "l" caracterizan la situación de cualquier punto
-sobre la faja del elipsoide, y que en X e Y son las coordenadas planas
+Quedan así definidas que "q" y "l", que caracterizan la situación de
+cualquier punto en el espacio de origen de la proyección (el
+elipsoide), y "X" e "Y", que son las coordenadas planas
 de la representación de ese punto en el plano de la proyección.
 
 Tal como se mencionó anteriormente, para que esta proyección esté
@@ -273,9 +279,9 @@ completamente determinada, se impone una condición que exige que los
 puntos del meridiano central sean representados sin deformación
 lineal.
 
-Además la imagen rectificada del meridiano central es el eje de las X de
-la representación y para el hemisferio sur de origen de coordenadas (0,0)
-se encuentra en el polo sur.
+Además la imagen rectificada del meridiano central se hace coincidente
+al eje de las X de la representación y para el hemisferio sur el
+origen de coordenadas (0,0) se encuentra en el polo sur.
 
 La condición de que en el meridiano central no se deformen las
 magnitudes lineales es la condición de tangencia del cilindro a lo largo
@@ -283,41 +289,46 @@ de tal meridiano.
 
 [[file:img/repslatex-img81.png]]
 
-Por lo tanto los puntos situados sobre el meridiano central tienen
+Se ve entonces que los puntos situados sobre el meridiano central tienen
 coordenadas:
 
 $$l=0$$ $$Y=0$$ sobre el elipsoide y la carta, respectivamente.
 
-La función (X.10) para dichos puntos se transforma en:
+La función [[eqn:2]] para dichos puntos se transforma en:
 
 $$X=f\left(q\right)$$ Los puntos del meridiano central están
-representados por puntos en una recta, eje de las X, en tal forma que
-sus distancias relativas son iguales en la proyección y en el elipsoide.
+representados por puntos en una recta, eje de las X, de tal forma que
+el mismo es una línea estándar.
 
-De lo anterior se deduce la naturaleza de la (X.11), que expresa el arco
-de meridiano del polo sur al punto considerado, por la variable "q" la
-que en cualquier momento se puede reemplazar por la variable
-$$\varphi$$.
+Se sucede entonces que la función f en el meridiano central no es más
+que la expresión del arco de meridiano del polo sur al punto
+considerado. 
 
-La función que expresa tal magnitud, como se determinó en VIII.5 es:
+La función que expresa tal magnitud es:
 
-$$S=\overset{{\varphi }}{\underset{{-\pi /2}}{\int }}{M\cdot
-d\varphi }$$ De modo que se tiene:
+#+NAME: eqn:3
+\begin{equation}
+S=\overset{{\varphi }}{\underset{{-\pi /2}}{\int }}{M\cdot
+d\varphi }
+\end{equation}
 
-$$S=f\left(q\right)$$ (X.12)
+y siendo que $q$ es una función solo de $\varphi$, $$S=f(q)$$
 
-Para encontrar las coordenadas X e Y de puntos que no se encuentran
-sobre el meridiano central, se desarrolla en serie de Taylor la función
-de variable compleja (X.10) tomando como origen dicho meridiano y como
-incremento la diferencia de longitud "l".
+La función $f$ queda completamente determinada con estas condiciones,
+aunque aún es desconocida.
+
+Siendo que el principal uso de la proyección es en una zona acotada
+tiene sentido hallar una aproximación a la misma con tanta presición
+como necesitemos a partir del desarrollo en serie de taylor.
+
+$$f^{*} = \sum \frac{d^n{f}}{d{z}^n} \frac{(z-q)^n}{n!}$$
+
+#+NAME: eqn:4
+\begin{equation}
+f^{*} = \sum \frac{d^n{S}}{d{q}^n} \frac{(il)^n}{n!}
+\end{equation}
 
 Se obtiene por lo tanto:
-
-$$X+iY=f\left(q\right)+\frac{df\left(q\right)}{dq}\cdot
-\left(il\right)+\frac{d^2f\left(q\right)}{dq^2}\cdot
-{\frac{\left(il\right)^2}{2!}}+\frac{d^3f\left(q\right)}{dq^3}\cdot
-{\frac{\left(il\right)}{3!}}^3+...$$ O bien teniendo en cuenta la
-(X.12):
 
 $$X+iY=S+\frac{dS}{dq}\cdot
 \left(il\right)+\frac{d^2S}{dq^2}\cdot
@@ -335,14 +346,15 @@ $$i^5=i^3\cdot i^2=\left(-i\right)\cdot \left(-1\right)=i$$ Por lo tanto
 corresponden a las Y. Es posible entonces separar las variables reales e
 imaginarias:
 
-$$X=S-\frac{d^2S}{dq^2}\cdot {\frac{l^2}{2}}+\frac{d^4S}{dq^4}\cdot {\frac{l}{24}}^4-\frac{d^6S}{dq^6}\cdot {\frac{l^6}{720}}+...$$
-
-$$Y=\frac{dS}{dq}\cdot l-\frac{d^3S}{dq^3}\cdot {\frac{l}{6}}^3+\frac{d^5S}{dq^5}\cdot {\frac{l^5}{120}}-...$$
-(X.13.b)
+#+NAME: eqn:coordenadas
+\begin{align}
+X&=& S & -\frac{d^2S}{dq^2}\cdot {\frac{l^2}{2}} & + \frac{d^4S}{dq^4}\cdot {\frac{l}{24}}^4 & -\frac{d^6S}{dq^6}\cdot {\frac{l^6}{720}} & + ...\\
+Y&=& \frac{dS}{dq}\cdot l & -\frac{d^3S}{dq^3}\cdot {\frac{l}{6}}^3 & +\frac{d^5S}{dq^5}\cdot {\frac{l^5}{120}} & -\frac{d^7S}{dq^7}\cdot {\frac{l^7}{5040}} & +...
+\end{align}
 
 Se calculará el primer término de la serie:
 
-$$\frac{dS}{dq}=\frac{dS}{\mathit{d\varphi
+$$\frac{dS}{dq}=\frac{dS}{{d\varphi
 }}\cdot {\frac{d\varphi }{dq}}$$ $$dS=M\cdot d\varphi$$
 $$\frac{dS}{d\varphi }=M$$ $$dq=\frac{M\cdot d\varphi }{N\cdot
 cos\left(\varphi \right)}$$ $$\frac{d\varphi }{dq}=\frac{N\cdot
@@ -352,138 +364,189 @@ $$\frac{dS}{dq}=M\cdot {\frac{N\cdot cos\left(\varphi \right)}{M}}$$
 
 $$\frac{dS}{dq}=N\cdot cos\left(\varphi \right)$$
 
-Para hallar las sucesivas derivadas de "S" respecto de "q" se deriva
-como función de función, primero respecto de la variable " $$\varphi$$"
-y luego por "q". Llamando:
+Para hallar las sucesivas derivadas de $S$ respecto de $q$ se deriva
+aplicando la regla de la cadena, teniendo en cuenta que q($\varphi$)
+es conocida, y que S(q) también, y que $$\frac{d\varphi}{dq}={\frac{dq}{d\varphi}}^{-1}$$
+Llamando $F^{a}$ a las sucesivas derivadas, donde a es un numeral romano:
 
-$$F^{II}=\frac{d^2S}{dq^2}=\frac{d}{d\varphi}\left(\frac{dS}{dq}\right)\frac{d\varphi}{dq}$$
-
-$$\frac{d}{d\varphi}\left(\frac{dS}{dq}\right)=\frac{d}{d\varphi}\left[Ncos\left(\varphi \right)\right]=\frac{dN}{d\varphi}\cdot cos\left(\varphi \right)-N\cdot sen\left(\varphi \right)$$
-
+#+NAME: eqn:5
+\begin{equation}
+F^{II}=\frac{d^2S}{dq^2}=\frac{d}{d\varphi}\left(\frac{dS}{dq}\right)\frac{d\varphi}{dq},
+\end{equation}
+donde
+#+NAME: eqn:6
+\begin{equation}
+\frac{d}{d\varphi}\left(\frac{dS}{dq}\right)=\frac{d}{d\varphi}\left[Ncos\left(\varphi \right)\right]=\frac{dN}{d\varphi}\cdot cos\left(\varphi \right)-N\cdot sen\left(\varphi \right),
+\end{equation}
+y
 $$N=a\cdot \left[1-e^2\cdot sen^2\left(\varphi \right)\right]^{-1/2}$$
 
+Luego, detniendo en cuenta que:
 $$\frac{dN}{d\varphi }=a\cdot \left[1-e^2\cdot sen^2\left(\varphi \right)\right]^{-3/2}\cdot e^2\cdot sen\left(\varphi \right)\cdot cos\left(\varphi \right)=\frac{N\cdot e^2\cdot sen\left(\varphi \right)\cdot cos\left(\varphi \right)}{1-e^2\cdot sen^2\left(\varphi \right)}$$
 
-$$\frac{d}{d\varphi}\left(\frac{dS}{dq}\right)=\left[\frac{N\cdot e^2\cdot sen\left(\varphi \right)\cdot cos\left(\varphi \right)}{1-e^2\cdot sen^2\left(\varphi \right)}\right]\cdot cos\left(\varphi \right)-N\cdot sen\left(\varphi \right)=$$
+Reemplazamos en [[eqn:6]], obteniendo:
+\begin{align*}
+\frac{d}{d\varphi}\left(\frac{dS}{dq}\right) &= \left[\frac{N\cdot e^2\cdot sen\left(\varphi \right)\cdot cos\left(\varphi \right)}{1-e^2\cdot sen^2\left(\varphi \right)}\right]\cdot cos\left(\varphi \right)-N\cdot sen\left(\varphi \right)\\
+&= \frac{N\cdot e^2\cdot sen\left(\varphi \right)\cdot cos^2\left(\varphi \right)-N\cdot sen\left(\varphi \right)\cdot \left[1-e^2\cdot sen^2\left(\varphi \right)\right]}{1-e^2\cdot sen^2\left(\varphi \right)}\\
+&= \frac{\left[-N\cdot sen\left(\varphi \right)\right]\cdot \left[-e^2\cdot cos^2\left(\varphi \right)+\left(1-e^2\cdot sen^2\left(\varphi \right)\right)\right]}{1-e^2\cdot sen^2\left(\varphi \right)}\\
+&= \frac{\left[-N\cdot sen\left(\varphi \right)\right]\cdot \left(1-e^2\right)}{1-e^2\cdot sen^2\left(\varphi \right)}\\
+&= \frac{\left(-a\right)\cdot \left(1-e^2\right)\cdot sen\left(\varphi \right)}{\left[1-e^2\cdot sen^2\left(\varphi \right)\right]^{-3/2}}\\
+\frac{d}{d\varphi}\left(\frac{dS}{dq}\right)&=-M\cdot sen\left(\varphi \right)
+\end{align*}
 
-$$=\frac{N\cdot e^2\cdot sen\left(\varphi \right)\cdot cos^2\left(\varphi \right)-N\cdot sen\left(\varphi \right)\cdot \left[1-e^2\cdot sen^2\left(\varphi \right)\right]}{1-e^2\cdot sen^2\left(\varphi \right)}=$$
+Por lo tanto, en [[eqn:5]]:
 
-$$=\frac{\left[-N\cdot sen\left(\varphi \right)\right]\cdot \left[-e^2\cdot cos^2\left(\varphi \right)+\left(1-e^2\cdot sen^2\left(\varphi \right)\right)\right]}{1-e^2\cdot sen^2\left(\varphi \right)}=\frac{\left[-N\cdot sen\left(\varphi \right)\right]\cdot \left(1-e^2\right)}{1-e^2\cdot sen^2\left(\varphi \right)}=$$
-
-$$=\frac{\left(-a\right)\cdot \left(1-e^2\right)\cdot sen\left(\varphi \right)}{\left[1-e^2\cdot sen^2\left(\varphi \right)\right]^{-3/2}}$$
-
-$$\frac{d}{d\varphi}\left(\frac{dS}{dq}\right)=-M\cdot sen\left(\varphi \right)$$
-
-Por lo tanto:
-
-$$F^{II}=-M\cdot sen\left(\varphi \right)\cdot {\frac{N\cdot cos\left(\varphi \right)}{M}}$$
-
-$$F^{II}=\left(-N\right)\cdot sen\left(\varphi \right)\cdot cos\left(\varphi \right)$$
+#+NAME: eqn:7
+\begin{align}
+F^{II} &=-M\cdot sen\left(\varphi \right)\cdot {\frac{N\cdot cos\left(\varphi \right)}{M}} \nonumber \\
+F^{II} &=\left(-N\right)\cdot sen\left(\varphi \right)\cdot cos\left(\varphi \right)
+\end{align}
 
 En las deducciones de las derivadas restantes se usan las siguientes
 abreviaturas auxiliares:
 
-$$n^2=e'^2\cdot cos^2\left(\varphi \right)$$
-$$t=tg\left(\varphi \right)$$ $$e'^2=\frac{a^2-b^2}{a^2}$$ Reemplazando
-estas abreviaturas en la segunda derivada:
+\begin{align}
+n^2 &= e'^2\cdot cos^2\left(\varphi \right) \\
+t &= tg\left(\varphi \right)\\
+e'^2 &= \frac{a^2-b^2}{a^2} \\
+\end{align}
 
-$$F^{II}=\left(-N\right)\cdot
-cos\left(\varphi \right)\cdot
-sen\left(\varphi \right)\cdot
-{\frac{cos\left(\varphi \right)}{cos\left(\varphi
-\right)}}=\left(-N\right)\cdot cos^2\left(\varphi
-\right)\cdot tg\left(\varphi
-\right)=\left(-N\right)\cdot cos^2\left(\varphi \right)\cdot
-t$$ La $$\frac{d\varphi }{dq}$$ se expresa también en función de las
-nuevas abreviaturas introducidas, de manera tal que:
+Por comodidad reemplazaremos estas abreviaturas en [[eqn:7]]:
 
-$$\frac{d\varphi}{dq}=\frac{N}{M}\cdot cos\left(\varphi \right)=\frac{a\cdot \left[1-e^2\cdot sen^2\left(\varphi \right)\right]^{3/2}\cdot cos\left(\varphi \right)}{\left[1-e^2\cdot sen^2\left(\varphi \right)\right]^{1/2}\cdot a\cdot \left(1-e^2\right)}=\frac{\left[1-e^2\cdot sen^2\left(\varphi \right)\right]}{\left(1-e^2\right)}\cdot cos\left(\varphi \right)$$
+\begin{align}
+F^{II} &= \left(-N\right)\cdot cos\left(\varphi \right)\cdot
+sen\left(\varphi \right)\cdot {\frac{cos\left(\varphi
+\right)}{cos\left(\varphi \right)}} \nonumber \\
+ &= \left(-N\right)\cdot cos^2\left(\varphi \right)\cdot
+tg\left(\varphi \right) \nonumber \\
+ &= \left(-N\right)\cdot cos^2\left(\varphi \right)\cdot t
+\end{align}
+
+Tambien $\frac{d\varphi}{dq}$ se expresa en función de $n,t y e'$
+como
+
+\begin{align}
+\frac{d\varphi}{dq} &= \frac{N}{M}\cdot cos\left(\varphi \right) \nonumber \\
+ &= \frac{a\cdot \left[1-e'^2\cdot sen^2\left(\varphi \right)\right]^{3/2}\cdot cos\left(\varphi \right)}{\left[1-e'^2\cdot sen^2\left(\varphi \right)\right]^{1/2}\cdot a\cdot \left(1-e'^2\right)} \nonumber \\
+ &= \frac{\left[1-e'^2\cdot sen^2\left(\varphi \right)\right]}{\left(1-e'^2\right)}\cdot cos\left(\varphi \right)
+\end{align}
 
 Teniendo en cuenta que:
 
 $$e'^2=\frac{e^2}{1-e^2}$$
 
-$$\frac{d\varphi}{dq}=\left(\frac{1-e^2}{1-e^2}-\frac{e^2\cdot cos^2\left(\varphi \right)}{1-e^2}\right)\cdot cos\left(\varphi \right)=\left[1+e^2\cdot cos^2\left(\varphi \right)\right]\cdot cos\left(\varphi \right)$$
+\begin{align}
+\frac{d\varphi}{dq} &= \left(\frac{1-e^2}{1-e^2}-\frac{e^2\cdot cos^2\left(\varphi \right)}{1-e^2}\right)\cdot cos\left(\varphi \right) \nonumber \\
+ &= \left[1+e^2\cdot cos^2\left(\varphi \right)\right]\cdot cos\left(\varphi \right)
+\end{align}
 
 $$\frac{d\varphi}{dq}=\left[1+n^2\right]\cdot cos\left(\varphi \right)$$
 
 Para hallar la tercera derivada se hace:
 
-$$\frac{F^{II}}{F^I}=\frac{\left(-N\right)\cdot
-cos\left(\varphi \right)\cdot
-sen\left(\varphi \right)}{N\cdot
-cos\left(\varphi
-\right)}=-sen\left(\varphi \right)$$ Y se derivan ambos miembros
+\begin{align*}
+\frac{F^{II}}{F^I} &= \frac{\left(-N\right)\cdot cos\left(\varphi \right)\cdot sen\left(\varphi \right)}{N\cdot cos\left(\varphi \right)} \\
+ &= -sen\left(\varphi \right)
+\end{align*}
+
+ Y se derivan ambos miembros
 respecto de "q":
 
-$$\frac{F^{III}\cdot F^I-F^{II}\cdot F^{II}}{{F^I}^2}=\frac{F^{III}}{F^I}-\frac{{F^II}^2}{{F^I}^2}=-cos\left(\varphi \right)\cdot {\frac{\mathit{d\varphi}}{dq}}=-cos^2\left(\varphi \right)\cdot \left(1+n^2\right)$$
+\begin{align*}
+\frac{F^{III}\cdot F^I-F^{II}\cdot F^{II}}{{F^I}^2}
+ &= \frac{F^{III}}{F^I}-\frac{{F^{II}}^2}{{F^I}^2} \\
+ &= -cos\left(\varphi \right)\cdot {\frac{{d\varphi}}{dq}} \\
+ &= -cos^2\left(\varphi \right)\cdot \left(1+n^2\right)
+\end{align*}
 
-$$F^{III}=\left[-cos^2\left(\varphi \right)\cdot \left(1+n^2\right)+\frac{{F^II}^2}{{F^I}^2}\right]\cdot {F^I}^2$$
-
-$$F^{III}=\left[-cos^2\left(\varphi \right)\cdot \left(1+n^2\right)+\frac{N^2\cdot cos^4\left(\varphi \right)\cdot t^2}{N^2\cdot cos^2\left(\varphi \right)}\right]\cdot N\cdot cos\left(\varphi \right)$$
-
-$$F^{III}=\left[-cos^3\left(\varphi \right)\right]\cdot \left(1-t^2+n^2\right)\cdot N$$
+\begin{align}
+F^{III} &= \left[-cos^2\left(\varphi \right)\cdot
+\left(1+n^2\right)+\frac{{F^{II}}^2}{{F^I}^2}\right]\cdot {F^I}^2
+\nonumber \\
+F^{III} &= \left[-cos^2\left(\varphi \right)\cdot
+\left(1+n^2\right)+\frac{N^2\cdot cos^4\left(\varphi \right)\cdot
+t^2}{N^2\cdot cos^2\left(\varphi \right)}\right]\cdot N\cdot
+cos\left(\varphi \right) \nonumber \\
+F^{III} &= \left[-cos^3\left(\varphi \right)\right]\cdot
+\left(1-t^2+n^2\right)\cdot N
+\end{align}
 
 De manera similar se encuentran las siguientes derivadas:
 
-$$F^{IV}=cos^4\left(\varphi \right)\cdot N\cdot t\cdot \left(5-t^2+9\cdot n^2+4\cdot n^4\right)$$
+#+NAME: eqn:8
+\begin{align}
+F^{IV} &= cos^4 \left(\varphi \right)\cdot N\cdot t\cdot &\left(5-t^2+9\cdot n^2+4\cdot n^4\right) & \\
+F^V &= cos^5\left(\varphi \right)\cdot N\cdot &(5-18\cdot
+t^2+t^4+14\cdot n^2-58\cdot t^2\cdot n^2+13\cdot n^4 &- \nonumber  \\
+& &- 64\cdot t^2\cdot n^4 + 4\cdot n^6-24\cdot t^2\cdot n^6) & \\
+F^{VI} &= cos^6\left(\varphi \right)\cdot N\cdot t\cdot &(61-58\cdot t^2+t^4+270\cdot n^2-330\cdot t^2\cdot n^2 &+ \nonumber \\
+& &+ 445\cdot n^4-680\cdot t^2\cdot n^4+44\cdot n^6 \nonumber &- \\
+& &- 600\cdot t^2\cdot n^6+88\cdot n^8-192\cdot t^2\cdot n^8) &
+\end{align}
 
-$$F^V=cos^5\left(\varphi \right)\cdot N\cdot \left(5-18\cdot t^2+t^4+14\cdot n^2-58\cdot t^2\cdot n^2+13\cdot n^4-64\cdot t^2\cdot n^4+4\cdot n^6-24\cdot t^2\cdot n^6\right)$$
+Reemplazando las expresiones de las derivadas [[eqn:7]] a [[eqn:8]] en los
+desarrollos en serie de [[eqn:coordenadas]] dará las coordenadas de
+los puntos de la carta con las abscisas contadas a partir del polo sur
+y las ordenadas a partir del meridiano central de la faja.
 
-$$F^{VI}=cos^6\left(\varphi \right)\cdot N\cdot t\cdot (61-58\cdot t^2+t^4+270\cdot n^2-330\cdot t^2\cdot n^2+445\cdot n^4-680\cdot t^2\cdot n^4+$$
+Las coordenadas X e Y en la proyección Gauss-Krüger resultan entonces:
 
-$$+44\cdot n^6-600\cdot t^2\cdot n^6+88\cdot n^8-192\cdot t^2\cdot n^8)$$
-
-Reemplazando las expresiones de las derivadas (X.14), (X.15), (X.17),
-(X.18), (X.19) y (X.20) en los desarrollos en serie de (X.13.a) y
-(X.13.b) dará las coordenadas de los puntos de la carta con las abscisas
-contadas a partir del polo sur y las ordenadas a partir del meridiano
-central de la faja.
-
-Las coordenadas X e Y en la proyección Gauss- Krüger resultan entonces:
-
-$$X=S+\frac{l^2\cdot cos^2\left(\varphi \right)\cdot N\cdot t}{2}+\frac{l^4\cdot cos^4\left(\varphi \right)\cdot N\cdot t}{24}\cdot \left(5-t^2+9\cdot n^2+4\cdot n^4\right)+$$
-
-$$+{\frac{l^6\cdot cos^6\left(\varphi \right)\cdot N\cdot t}{720}}\cdot (61-58\cdot t^2+t^4+270\cdot n^2-330\cdot t^2\cdot n^2+445\cdot n^4-680\cdot t^2\cdot n^4+$$
-
-$$+44\cdot n^6-600\cdot t^2\cdot n^6+88\cdot n^8-192\cdot t^2\cdot n^8)$$
-
-$$Y=l\cdot cos\left(\varphi \right)\cdot N+\frac{l^3\cdot cos^3\left(\varphi \right)\cdot N}{6}\cdot \left(1-t^2+n^2\right)+\frac{l^5\cdot cos^5\left(\varphi \right)\cdot N}{120}\cdot (5-18\cdot t^2+t^4+$$
-
-$$+14\cdot n^2-58\cdot t^2\cdot n^2+13\cdot n^4-64\cdot t^2\cdot n^4+4\cdot n^6-24\cdot t^2\cdot n^6)$$
-(X.21.b)
+#+NAME: eqn:gkxy
+\begin{align}
+\begin{split}
+X &=
+\begin{multlined}[t][0.9\textwidth]
+S+\frac{l^2\cdot cos^2\left(\varphi \right)\cdot N\cdot t}{2}+\frac{l^4\cdot cos^4\left(\varphi \right)\cdot N\cdot t}{24} \\
+ \cdot \left(5-t^2+9\cdot n^2+4\cdot n^4\right) + \end{multlined} \\
+& \quad +
+\begin{multlined}[t][0.9\textwidth]
+ {\frac{l^6\cdot cos^6\left(\varphi \right)\cdot N\cdot t}{720}}\cdot
+ (61-58\cdot t^2+t^4+270\cdot n^2-330\cdot t^2\cdot n^2 + \\ 
+\shoveright{+445\cdot n^4 - 680\cdot t^2\cdot n^4 + 44\cdot n^6-600\cdot t^2\cdot n^6 + }\\
+ 88\cdot n^8-192\cdot t^2\cdot n^8)
+\end{multlined}
+\end{split} \\
+\begin{split}
+Y &=
+l\cdot cos\left(\varphi \right)\cdot N+\frac{l^3\cdot cos^3\left(\varphi \right)\cdot N}{6}\cdot \left(1-t^2+n^2\right) + \\
+& \quad + \frac{l^5\cdot cos^5\left(\varphi \right)\cdot N}{120}\cdot
+\!\begin{multlined}[t][0.5\textwidth]
+(5-18\cdot t^2+t^4+14\cdot n^2-58\cdot t^2\cdot n^2 + \\
++ 13\cdot n^4-64\cdot t^2\cdot n^4+4\cdot n^6-24\cdot t^2\cdot n^6)
+\end{multlined}
+\end{split}
+\end{align}
 
 Estas últimas expresiones dan la representación conforme de una parte de
 la superficie terrestre sobre un plano, o bien para toda la extensión de
 la tierra. Se elige un meridiano central a partir del cual se cuentan
 las cantidades "l", positivas al Este y negativas al Oeste.
 
-Las fórmulas (X.21.a) y (X.21.b) dan va valores negativos de las Y para
-los puntos situados al Oeste del meridiano central y habría que hacer
-distinción de signos para las ordenadas.
+Las fórmulas [[eqn:gkxy]] dan valores negativos de Y a
+los puntos situados al Oeste del meridiano central, esto fueza la necesitad
+de adoptar alguna convención para trabajar con los signos de las ordenadas 
+en la carta.
 
-El sistema de fajas meridianas introducidas por Krüger están limitadas
-en 3 de longitud, 130' a cada lado del meridiano central. Se debe
-distinguir por lo tanto las coordenadas de las siguientes longitudes
+El sistema de fajas meridianas utilizado en Argentina están limitadas
+en 3 de longitud, 1$\,\!^{\circ}$30' a cada lado del meridiano central. 
+Se utilizan fajas para las siguientes longitudes de origen
 respecto de Greenwich: -72, -69, -66, -63, - 60, -57, -54.
 
-Con el fin de evitar coordenadas Y negativas, se ha convenido en
+Con el fin de evitar coordenadas Y negativas, se tomó la convención de
 aumentar en 500.000 a todas las Y, de modo que resultan menores que
 500.000 al Oeste del meridiano central, pero positivas y superiores a
-500.000 al Este. Se elige este valor debido a que ninguna coordenada Y
-lo supera dentro de una misma faja.
+500.000 al Este. Este valor no es superado dentro de una misma faja.
 
 Como a un determinado par de coordenadas le debe corresponder un solo
-punto dentro del sistema, lo cual con las convenciones adoptadas hasta
-ahora no sería el caso, dado que en las siete fajas existen siete puntos
-con las mismas coordenadas, se aumentan las ordenadas Y en números
+punto dentro del sistema, y para evitar el equívoco entre coordenadas
+en las distintas fajas, se aumentan las ordenadas Y en números
 enteros de millones según la faja de que se trata.
 
-Así se atribuyen a los siete meridianos centrales los siguientes números
+Así, se asignan a los siete meridianos centrales los siguientes números
 de faja, que corresponden al número entero de millones que se antepone a
 las Y, resultando las siguientes coordenadas para dichos meridianos:
 
-| Meridiano   | N de faja   | Ordenada Y   |
+| Meridiano   | N de faja   | Y sobre MC |
 | -72         | 1           | 1.500.000    |
 | -69         | 2           | 2.500.000    |
 | -66         | 3           | 3.500.000    |
@@ -492,18 +555,22 @@ las Y, resultando las siguientes coordenadas para dichos meridianos:
 | -57         | 6           | 6.500.000    |
 | -54         | 7           | 7.500.000    |
 
-Llamando Y' al valor obtenido de la expresión (X.21.b) con las
+Llamando Y' al valor obtenido de la expresión [[eqn:gkxy]], con las
 modificaciones descriptas, el valor de la coordenada Y en el sistema
-Gauss- Krüger aplicado a la Argentina se transforma en:
+Gauss-Krüger aplicado a la Argentina se transforma en:
 
 $$Y=n\cdot t^6+500.000+Y'$$ donde "n" es el número de faja.
 
-Las expresiones (X.21) corresponden al orden de precisión de los
+Las expresiones [[eqn:gkxy]] corresponden al orden de precisión de los
 trabajos fundamentales; en trabajos de menor precisión se podrá
-prescindir de los términos "t" y "n" con potencias superiores a 2.
+prescindir de los términos "n" con potencias superiores a 2,
+considerando que $n < 0.08$, y aún aquellos con $t^4$ o $t^2*n^2$,
+considerando que $t < 0.6$.
 
+::: apartado
+**** La grilla en la carta
 Conocidas las coordenadas geográficas de los puntos, se calculan las
-coordenadas Gauss- Krüger de los mismos dentro de la faja que
+coordenadas Gauss-Krüger de los mismos dentro de la faja que
 corresponda.
 
 Por razones prácticas, se extienden las coordenadas hasta 2 a cada lado
@@ -515,7 +582,7 @@ una faja vecina no necesita hacer uso de coordenadas en dos sistemas
 distintos.
 
 En las cartas topográficas se ha trazado una cuadrícula de coordenadas
-Gauss- Krüger en el borde de cada hoja. Frente a las líneas del
+Gauss-Krüger en el borde de cada hoja. Frente a las líneas del
 cuadriculado se han impreso las coordenadas en kilómetros permitiendo
 determinar las coordenadas de cualquier punto que interese.
 
@@ -527,33 +594,34 @@ marginal de la carta una escala de coordenadas.
 
 La operación recíproca, es decir dado un par de coordenadas ubicar dicho
 punto en la carta, también es posible por medio de la cuadrícula.
+::::::
 
-X.3.- TRANSFORMACIÓN DE COORDENADAS PLANAS EN GEOGRÁFICAS.
+*** Transformación inversa.
 
 Se debe resolver el problema inverso del que se vio en el punto
-anterior, planteando en forma general las siguientes ecuaciones:
+anterior, planteando en forma general:
 
-$$q+il=F\left(x+iy\right)$$ (X.22)
+$$q+il=F\left(x+iy\right)$$
 
-Análogamente, se desarrollan en serie de Taylor:
+La realción anteriormente utilizada $$ X = f(q) $$ puede aprovecharse nuevamente, 
+para desarrollar en serie de Taylor alrededor de $Y=0$. 
 
-$$q+il=F\left(x\right)+F^I\left(x\right)\left(iy\right)-F^{II}\left(x\right)\frac{y^2}{2}+F^{III}\left(x\right)\frac{\left(iy\right)^3}{3!}+F^{IV}\left(x\right)\frac{y^4}{4!}$$
-Separando la parte real y la imaginaria:
+Partiendo de la expresión
+$$q+il=F\left(x\right)+F^I\left(x\right)\left(iy\right)-F^{II}\left(x\right)\frac{y^2}{2}+F^{III}\left(x\right)\frac{\left(iy\right)^3}{3!}+F^{IV}\left(x\right)\frac{y^4}{4!},$$
 
-$$q=F\left(x\right)-F^{II}\left(x\right)\frac{y^2}{2}+F^{IV}\left(x\right)\frac{y^2}{24}-...$$
-(X.23)
+Que representa la serie completa, pueden separarse los términos reales e imaginarios.
 
-$$l=F^I\left(x\right)y-F^{III}\left(x\right)\frac{y^3}{6}+F^V\left(x\right)\frac{y^5}{120}-...$$
-Estas últimas expresiones resultan de la condición de conformidad de la
-transformación de un plano al elipsoide. De la misma forma que se
-realizó en la proyección Gauss- Krüger, se introducen ciertas
-condiciones para la transformación.
+\begin{align}
+q &=F\left(x\right) & -F^{II}\left(x\right)\frac{y^2}{2} & + F^{IV}\left(x\right)\frac{y^2}{24}-... \nonumber \\
+l &=F^I\left(x\right)y & -F^{III}\left(x\right)\frac{y^3}{6} & + F^V\left(x\right)\frac{y^5}{120}-...
+\end{align}
 
+De la misma forma que se realizó en la proyección, para que esta serie
+aproxime la funcion buscada se utilizan las condiciones impuestas a la
+transformación.
+
+::: derecha
 [[file:img/repslatex-img82.png]]
-
-Para y=0 debe ser l=0; por lo tanto:
-
-$$F\left(x\right)=q_1$$ (X.24)
 
 En la figura (X.4), S es el arco de meridiano del polo sur hasta la
 latitud del punto Q; X es la coordenada Gauss, distancia del polo sur al
@@ -561,176 +629,221 @@ pie de la perpendicular desde Q al meridiano central, que se denomina T;
 a la latitud del punto T se la denomina $\varphi _1$. Por lo tanto $q_1$
 se calcula en función de $\varphi _1$.
 
-Este valor puede ser obtenido en función de la coordenada X, en efecto
-de la (VIII.13), arco de meridiano del polo sur a una altitud
-cualquiera.
+::::::
 
-$$X=S=\alpha \cdot \varphi _1+\alpha \cdot {\frac{\pi }{2}}+\beta \cdot sen\left(2\cdot \varphi _1\right)+\gamma \cdot sen\left(4\cdot \varphi _1\right)+\delta \cdot sen\left(6\cdot \varphi _1\right)+\varepsilon \cdot sen\left(8\cdot \varphi _1\right)+...$$
+Sabiendo que si $Y=0$, $l=0$, y que por consecuencia
 
-El valor de $\varphi_1$ se obtiene por aproximaciones sucesivas:
+$$q_a = F\left(x\right), \forall a:{x,0}$$ 
+
+Luego, como punto de partida de la serie puede utilizarse el punto ${X,0}$, para luego
+hallar la coordenada de ${X,Y}$
+
+El valor de $q_0$, colatitud de el punto auxiliar, puede ser obtenido
+en función de la coordenada X, en efecto del desarrollo en serie utilizado
+para resolver la integral de [[eqn:3]], arco de meridiano del polo sur a una latitud
+cualquiera,
+
+#+NAME: eqn:Staylor
+\begin{align}
+\begin{multlined}
+X=S=\alpha \cdot \varphi _1+\alpha \cdot {\frac{\pi }{2}}+\beta \cdot sen\left(2\cdot \varphi _1\right)+ \\ + \gamma \cdot sen\left(4\cdot \varphi _1\right)+\delta \cdot sen\left(6\cdot \varphi _1\right)+\varepsilon \cdot sen\left(8\cdot \varphi _1\right)+...
+\end{multlined}
+\end{align}
+
+Puede obtenerse $\varphi_1$ por aproximaciones sucesivas, partiendo del primer término,
 
 $$X=\alpha \cdot \left(\varphi _{1,1}+\frac{\pi }{2}\right)$$
 
-$$\varphi _{1,1}=\frac{X}{\alpha }-\frac{\pi }{2}$$
+$$\varphi_{1,1}=\frac{X}{\alpha }-\frac{\pi }{2}$$
 
-Luego se introduce este primer valor de la latitud en la (VIII.13) para
+Y utilizando este primer valor de la latitud en [[eqn:Staylor]] para
 obtener una segunda aproximación del valor de la latitud.
 
-$$\varphi _{1,2}=\frac{1}{\alpha }\left(x-\alpha \cdot {\frac{\pi}{2}}-\beta \cdot sen\left(2\cdot \varphi _{1,1}\right)-\gamma \cdot sen\left(4\cdot \varphi _{1,1}\right)-\delta \cdot sen\left(6\cdot \varphi _{1,1}\right)-\varepsilon \cdot sen\left(8\cdot \varphi _{1,1}\right)\right)$$
+\begin{align*}
+\varphi _{1,2} &=\frac{1}{\alpha }
+\begin{multlined}[t][0.9\textwidth]
+\left(x-\alpha \cdot {\frac{\pi}{2}}-\beta \cdot sen\left(2\cdot \varphi _{1,1}\right)-\gamma \cdot sen\left(4\cdot \varphi _{1,1}\right)- \right. \\  
+\left. -\delta \cdot sen\left(6\cdot \varphi _{1,1}\right)-\varepsilon \cdot sen\left(8\cdot \varphi _{1,1}\right)\right)
+\end{multlined} \\
+&= 
+\begin{multlined}[t][0.9\textwidth]
+\left(\frac{x}{\alpha }-\frac{\pi}{2}\right)-\frac{\beta }{\alpha }\cdot sen\left(2\cdot \varphi _{1,1}\right)-\frac{\gamma }{\alpha }\cdot sen\left(4\cdot \varphi _{,11}\right)- \\ - \frac{\delta }{\alpha }\cdot sen\left(6\cdot \varphi _{1,1}\right)-\frac{\varepsilon }{\alpha }\cdot sen\left(8\cdot \varphi _{1,1}\right) 
+\end{multlined} \\
+&= 
+\begin{multlined}[t][0.9\textwidth]
+\varphi _{1,1}-\frac{1}{\alpha }\left[\beta \cdot sen\left(2\cdot \varphi _{1,1}\right)-\gamma \cdot sen\left(4\cdot \varphi _{1,1}\right)- 
+\right. \\ \left.
+- \delta \cdot sen\left(6\cdot \varphi _{1,1}\right)-\varepsilon \cdot sen\left(8\cdot \varphi _{1,1}\right)\right]
+\end{multlined} \\
+\varphi _{1,3} &=\varphi _{1,1}-\left[\beta \cdot sen\left(2\cdot \varphi _{1,2}\right)+\gamma \cdot sen\left(4\cdot \varphi _{1,2}\right)+\delta \cdot sen\left(6\cdot \varphi _{1,2}\right) \right. \\ 
+&\quad \left. +\varepsilon \cdot sen\left(8\cdot \varphi _{1,2}\right)\right]
+\end{align*}
 
-$$\varphi _{1,2}=\left(\frac{x}{\alpha }-\frac{\pi}{2}\right)-\frac{\beta }{\alpha }\cdot sen\left(2\cdot \varphi _{1,1}\right)-\frac{\gamma }{\alpha }\cdot sen\left(4\cdot \varphi _{,11}\right)-\frac{\delta }{\alpha }\cdot sen\left(6\cdot \varphi _{1,1}\right)-\frac{\varepsilon }{\alpha }\cdot sen\left(8\cdot \varphi _{1,1}\right)$$
+Se sigue iterando hasta hallar la convergencia deseada.
 
-$$\varphi _{1,2}=\varphi _{1,1}-\frac{1}{\alpha }\left[\beta \cdot sen\left(2\cdot \varphi _{1,1}\right)-\gamma \cdot sen\left(4\cdot \varphi _{1,1}\right)-\delta \cdot sen\left(6\cdot \varphi _{1,1}\right)-\varepsilon \cdot sen\left(8\cdot \varphi _{1,1}\right)\right]$$
+Volviendo al desarrollo en serie, y considerando que
 
-$$\varphi _{1,3}=\varphi _{1,1}-\left[\beta \cdot sen\left(2\cdot \varphi _{1,2}\right)+\gamma \cdot sen\left(4\cdot \varphi _{1,2}\right)+\delta \cdot sen\left(6\cdot \varphi _{1,2}\right)+\varepsilon \cdot sen\left(8\cdot \varphi _{1,2}\right)\right]$$
+$$q=\int {\frac{M\cdot d\varphi }{N\cdot cos\left(\varphi \right)}},$$
 
-Se sigue iterando hasta que en la (VIII.13) introduciendo
-$\varphi_{1,j}$ dé como resultado el valor de X ingresado.
+y por lo tanto:
 
-Para resolver las (X.23) se debe recordar:
+$$\varphi =f\left(q\right)$$
 
-$$dq=\frac{M\cdot d\varphi }{N\cdot cos\left(\varphi \right)}$$
+Desarrollando $\varphi$ en serie a partir de q_1 obtenemos
 
-Donde:
+$$\varphi =\varphi _1+\frac{{d\varphi}}{dq}\left(q-q_1\right)+\frac{d^2\varphi}{dq^2}\left(q-q_1\right)^2+...$$
 
-$$q=\int {\frac{M\cdot d\varphi }{N\cdot cos\left(\varphi \right)}}$$
+que reemplazando q por su desarrollo en serie a partir de x da
 
-Por lo tanto:
-
-$$\varphi =f\left(q\right)=f\left[q_1+\left(q-q_1\right)\right]$$
-Desarrollando en serie, tomando a $\left(q-q_1\right)$ como incremento,
-se tiene:
-
-$$\varphi =\varphi _1+\frac{\mathit{d\varphi}}{dq}\left(q-q_1\right)+\frac{d^2\varphi}{dq^2}\left(q-q_1\right)^2+...$$
-
-Y por la (X.23) y (X.24) se tiene que:
-
-$$\varphi =\varphi _1-\left[F^{II}\left(x\right)\frac{y^2}{2}-F^{IV}\left(x\right)\frac{y^4}{24}\right]\cdot {\frac{d\varphi }{dq}}$$
+$$\varphi =\varphi _1-\left[F^{II}\left(x\right)\frac{y^2}{2}-F^{IV}\left(x\right)\frac{y^4}{24}\right]\cdot {\frac{d\varphi }{dq}} ...$$
 
 Para encontrar las expresiones se hallan las derivadas:
 
-$$F^I\left(x\right)=\frac{dq}{dx}=\frac{dq}{\mathit{d\varphi}}\cdot {\frac{d\varphi }{dx}}$$
+$$F^I\left(x\right)=\frac{dq}{dx}=\frac{dq}{{d\varphi}}\cdot {\frac{d\varphi }{dx}}$$
 
-$$\frac{dq}{\mathit{d\varphi}}=\frac{M}{N\cdot cos\left(\varphi \right)}$$
+$$\frac{dq}{{d\varphi}}=\frac{M}{N\cdot cos\left(\varphi \right)}$$
 $$\frac{d\varphi }{dx}=\frac{1}{M}$$
 
-$$\frac{\mathit{d\varphi}}{dx}=\frac{1}{cos\left(\varphi \right)}$$
+$$\frac{{d\varphi}}{dx}=\frac{1}{N \cdot cos\left(\varphi \right)}$$
 
-La segunda derivada se obtiene haciendo:
+Como la expresión hallada para la derivada solo depende de $\varphi$, 
+las siguientes derivadas pueden hallarse aplicando la regla de la cadena,
+por ejemplo
 
-$$\frac{d^2q}{dx^2}=\frac{d}{\mathit{d\varphi}}\left(\frac{dq}{dx}\right)\frac{\mathit{d\varphi}}{dx}$$
+$$\frac{d^2q}{dx^2}=\frac{d\left(\frac{dq}{dx}\right)}{{d\varphi}}\frac{{d\varphi}}{dx}.$$
 
-Omitiendo el cálculo de ésta y las derivadas de orden superior, como así
-también ciertas transformaciones, se obtienen las siguientes
-expresiones:
+No nos explayaremos aquí sobre el cálculo de cada derivada, sin embargo presentamos 
+las ecuaciones resultantes,
 
-$$l=\frac{y}{N_1\cdot cos\left(\varphi _1\right)}\cdot
-\left[1-\frac{y^2}{6\cdot N_1^2}\cdot \left(1+2\cdot t_1^2+n_1^2\right)+\frac{y^4}{120\cdot N_1^4}\cdot \left(5+28\cdot t_1^2+24\cdot t_1^4+6\cdot n_1^2+8\cdot n_1^2\cdot t_1^2\right)\right]$$
-
-$$\varphi =\varphi _{1}-\frac{y^2}{2\cdot N_1\cdot M_1}\cdot
-t_{1}\cdot
-\left[1-\frac{y^2}{12\cdot N_1^2}\cdot \left(5+3\cdot t_1^2+n_1^2-9\cdot t_1^2\cdot n_1^2\right)+\frac{y^4}{360\cdot N_1^4}\cdot \left(61+90\cdot t_1^2+45\cdot t_1^4\right)\right]$$
+\begin{align}
+l&= 
+\begin{multlined}[t]
+\frac{y}{N_1\cdot cos\left(\varphi _1\right)}\cdot
+\left[1-\frac{y^2}{6\cdot N_1^2}\cdot \left(1+2\cdot t_1^2+n_1^2\right) + \right. \\ \left. + \frac{y^4}{120\cdot N_1^4}\cdot \left(5+28\cdot t_1^2+24\cdot t_1^4+6\cdot n_1^2+8\cdot n_1^2\cdot t_1^2\right)\right]$$
+\end{multlined} \\
+\varphi &= 
+\begin{multlined}[t]
+\varphi_{1}-\frac{y^2}{2\cdot N_1\cdot M_1}\cdot t_{1}\cdot
+\left[1-\frac{y^2}{12\cdot N_1^2}\cdot \left(5+3\cdot t_1^2+n_1^2-9\cdot t_1^2\cdot n_1^2\right) + \right. \\
+ \left. + \frac{y^4}{360\cdot N_1^4}\cdot \left(61+90\cdot t_1^2+45\cdot t_1^4\right)\right]
+\end{multlined}
+\end{align}
 
 Expresiones en las que el resultado se obtiene en radianes.
 
-**** CONVERGENCIA DE MERIDIANOS.
+*** Convergencia de meridianos.
+
+Pasamos ahora a considerar algunas magnitudes que son útiles de calcular
+sobre esta proyección para el uso de la cartografía oficial como base
+del trabajo topográfico.
+
+::: derecha 
 
 [[file:img/repslatex-img83.png]]
 
-Considerando la figura (X.5), NS representa la imagen del meridiano que
+Considerando la figura , NS representa la imagen del meridiano que
 pasa por Q, WE el paralelo que pasa por el mismo punto, NC la dirección
 paralela al meridiano central, es decir el norte de cuadrícula.
+::::::
 
-El ángulo "c" formado por la tangente a NS en Q y la dirección NC, se
-denomina convergencia de meridianos plana.
+El ángulo "c" formado por $\vecd\varphi$ y $\vecd x$ se
+denomina convergencia de meridianos plana. 
 
-Considerando un punto Q1 infinitamente próximo, la diferencia de
-coordenadas entre éste y Q es dx y dy. Del triángulo elemental de la
-figura:
+Es simple de ver que, al ser la proyección conforme esté ángulo puede también
+calcularse a partir de $\vecd\lambda$ y $\vecd y$
 
-$$tg\left(c\right)=\frac{dx}{dy}$$ (X.26)
+En un punto cualquiera, este ángulo c puede calcularse como
 
-$$\frac{dx}{dy}$$
+\begin{align}
+tg\left(c\right)&=\frac{\vecd\lambda \cdot \vecd x}{\vecd\lambda \cdot \vecd y} \nonumber \\
+&=\frac{\partial{x}/\partial{\lambda}}{\partial{y}/\partial{\lambda}}
+\end{align}
 
-se halla de la ecuación de la curva WE, en la cual la latitud es
-constante por tratarse de un paralelo y la (X.26) puede escribirse:
+ Las derivadas se obtienen de diferenciar las expresiones de las
+coordenadas [[eqn:gkxy]], obteniéndose como primera aproximación:
 
-$$tg\left(c\right)=\frac{dx/dl}{dy/dl}$$ Las derivadas $$\frac{dx}{dl}$$
-y $$\frac{dy}{dl}$$ se obtienen de diferenciar las expresiones de las
-coordenadas Gauss (X.21.a) y (X.21.b), obteniéndose como primera
-aproximación:
+$$\frac{\partial x}{\partial y}=l\cdot cos^{2}\left(\varphi \right)\cdot N\cdot t$$
+$$\frac{\partial y}{\partial l}=N\cdot cos\left(\varphi \right)$$
 
-$$\frac{dx}{dy}=l\cdot cos^{2}\left(\varphi \right)\cdot N\cdot t$$
-$$\frac{dy}{dl}=N\cdot cos\left(\varphi
-\right)$$ La convergencia de meridianos, también como primera
-aproximación, será:
+utilizando la longitud referida al meridiano central $l$ en lugar de $lambda$
 
-$$tg\left(c\right)=\frac{dx/dl}{dy/dl}=\frac{l\cdot
+La convergencia de meridianos, también como primera aproximación, será:
+
+$$tg\left(c\right)=\frac{\partial x/\partial l}{\partial y/\partial l}=\frac{l\cdot
 cos^2\left(\varphi \right)\cdot N\cdot t}{N\cdot
 cos\left(\varphi \right)}=l\cdot sen\left(\varphi \right)$$
-$$tg\left(c\right)=l\cdot sen\left(\varphi \right)$$ (X.27)
+$$tg\left(c\right)=l\cdot sen\left(\varphi \right)$$ 
 
-Con "l" en radianes.
+Si se consideran todos los terminos de la serie se obtiene
 
-Como resultado de la diferenciación de las expresiones de las
-coordenadas Gauss con respecto a "l", considerando todos los miembros y
-la (X.27), se obtiene:
-
-$$tg\left(c\right)=l\cdot sen\left(\varphi \right)-\frac{l^3}{3}\cdot
+\begin{equation}
+tg\left(c\right)=
+\begin{multlined}[t]
+l\cdot sen\left(\varphi \right)-\frac{l^3}{3}\cdot
 sen\left(\varphi \right)\cdot cos^{2}\left(\varphi \right)\cdot
 \left(1+t^{2}+3\cdot
-n^{2}+2n^{4}\right)+\frac{l^5}{15}\cdot
+n^{2} + \right. \\ \left.
++ 2n^{4}\right)+\frac{l^5}{15}\cdot
 sen\left(\varphi \right)\cdot cos^{4}\left(\varphi \right)\cdot
-\left(2+4\cdot t+2\cdot t^{4}\right)$$ Como
+\left(2+4\cdot t+2\cdot t^{4}\right),
+\end{multlined}
+\end{equation} 
+
+y, si consideramos los primeros términos del desarrollo en serie de $c$ 
+como funcion de $tg(c)$ alrededor de $tg(c)$, que es una muy buena aproximación
+para un c suficientemente chico,
 
 $$c=tg\left(c\right)-\frac{l^3}{3}\cdot
 tg^{3}\left(c\right)-\frac{l^5}{5}\cdot
-tg^{5}\left(c\right)$$
+tg^{5}\left(c\right),$$
+
+que reemplazando en la expresión anterior da
+
 $$c=l\cdot sen\left(\varphi \right)+\frac{l^3}{3}\cdot sen\left(\varphi
 \right)\cdot cos^{2}\left(\varphi \right)\cdot \left(1+3\cdot
 n^{2}+2n^{4}\right)+\frac{l^5}{15}\cdot
 sen\left(\varphi \right)\cdot cos^{4}\left(\varphi \right)\cdot
-\left(2-t^{2}\right)$$ (X.28.a)
+\left(2-t^{2}\right)$$
 
 Si se desea la convergencia en función de las coordenadas planas, se
-obtiene reemplazando "l" por las coordenadas rectangulares
+realiza el mismo desarrollo pero partiendo de
+
+$$tg(c)=\frac{\partial{\lambda}/\partial{x}}{\partial{\lambda}/\partial{y}},$$
+
+que surge de considerar que el ángulo entre los vectores evaluados es el mismo 
+tanto en el origen como en el destino de la transformación, por ser la misma conforme.
+
+Se obteniene
 
 $$d=\frac{y}{N_1}\cdot t_{1}\cdot \left[1-\frac{y^2}{3\cdot
 N_1^2}\cdot \left(1+t_1^2-n_1^2-2\cdot
 n_1^4\right)+\frac{y^4}{N_1^4}\cdot
 {\frac{\left(2+5\cdot t_1^2+3\cdot
-t_1^4\right)}{15}}\right]$$ (X.28.b)
+t_1^4\right)}{15}}\right]$$
 
-**** MÓDULO DE DEFORMACIÓN.
+*** Módulo de deformación.
 
 Por tratarse de una proyección conforme, el módulo de deformación lineal
-o factor de escala varía de acuerdo a las coordenadas pero una vez
-fijadas, el módulo es el mismo en cualquier dirección.
+o factor de escala varía de acuerdo a las coordenadas pero para un punto
+el módulo es el mismo en cualquier dirección.
 
-De la (IX.2)
+Luego, Partiendo de $\vecd\lambda$, podemos desarrollar
 
-$$m^{2}=\frac{ds^2}{dS^2}=\frac{\left(dx\right)^2+\left(dy\right)^2}{\left(M\cdot
-d\varphi \right)^2+\left(N\cdot cos\left(\varphi
-\right)\cdot dl\right)^2}$$ $$m^{2}=\frac{\left(dy\right)^2\cdot
-\left[1+\left(dx/dy\right)^2\right]}{\left(dl\right)^2\cdot
-N^2\cdot cos^2\left(\varphi \right)\cdot
-\left[1+\left(\frac{M\cdot d\varphi }{N\cdot
-cos\left(\varphi \right)\cdot
-dl}\right)^2\right]}$$
+\begin{align}
+m^{2}&=\frac{\|\vecd\lambda\|^2}{\|\veco\lambda\|^2}\\
+&=\frac{\left(\partial{y}/\partial{\lambda}\right)^2+\left(\partial{x}/\partial{\lambda}\right)^2}{\left(N\cdot cos\left(\varphi \right)\right)^2}\\
+&=\frac{\left(\partial{x}/\partial{\lambda}\right)^2 \left(1+\frac{\partial{x}/\partial{\lambda}}{\partial{y}/\partial{\lambda}}^2\right)}{\left(N\cdot cos\left(\varphi \right)\right)^2}
+\end{align}
 
-$$m^{2}=\left(\frac{dy}{dl}\right)^{2}\cdot
-{\frac{1+\left(dx/dy\right)^2}{N^2\cdot
-cos^2\left(\varphi \right)\cdot \left[1+\left(\frac{M\cdot
-d\varphi }{N\cdot cos\left(\varphi \right)\cdot
-dl}\right)^2\right]}}$$ Donde
+y considerar que
 
-$$1+\left(dx/dy\right)^{2}=1+tg^{2}\left(c\right)=sec\left(c\right)$$
-Para el paralelo $$d\varphi /dl=0$$
+$$1+\frac{\partial{x}/\partial{\lambda}}{\partial{y}/\partial{\lambda}}^2=1+tg^{2}\left(c\right)=sec\left(c\right)$$
 
-$$m=\frac{dy}{dl}\cdot
+$$m=\frac{\partial y}{\partial l}\cdot
 {\frac{1}{N\cdot cos\left(\varphi \right)}}\cdot
-sec\left(c\right)$$ Calculando la derivada de "y" respecto de "l" de la
-(X.21.b), sustituyendo el valor de "c", se obtiene:
+sec\left(c\right)$$
+
+Calculando la derivada desde [[eqn:gkxy]], y sustituyendo el valor de "c", se obtiene:
 
 $$m=1+l^{2}\cdot cos^{2}\left(\varphi
 \right)\cdot
@@ -742,16 +855,26 @@ n^{2}\right)$$ (X.29.a)
 Expresión en la cual "l" se introduce en radianes.
 
 Si se desea conocer la deformación lineal en función de las coordenadas
-planas, se deduce:
+planas, se puede partir de
 
-$$m=1+\frac{y^2}{2\cdot R^2}+\frac{y^4}{24\cdot
-R^4}$$ (X.29.b)
+\begin{align}
+\frac{1}{m^{2}}&=\frac{\|\veco x\|^2}{\|\vecd x\|^2}\\
+&=\frac{\left(\partial{\lambda}/\partial{x}\right)^2 \|\veco\lambda\|^2 + \left(\partial{\varphi}/\partial{x}\right)^2 \|\veco\varphi\|^2}{1}\\
+m^2 &= \frac{1}{\left(\partial{\lambda}/\partial{x}\right)^2 \left(N\,cos\left(\varphi\right)\right)^2 + \left(\partial{\varphi}/\partial{x}\right)^2 M^2}
+\end{align}
+
+Haciendo el desarrollo en serie con respecto de y, desde el meridiano central,
+ donde m=1
+
+Operando se llega a
+
+$$m=1+\frac{y^2}{2\cdot R^2}+\frac{y^4}{24\cdot R^4}$$
 
 Donde:
 
 $$R=\sqrt{M_1\cdot N_1}$$ 
 
-**** DEFORMACIONES LINEALES.
+*** Deformaciones lineales.
 
 Cuando se desea conocer la deformación de una distancia finita,
 tendiendo en cuenta que:
@@ -878,7 +1001,7 @@ $$dr-ds=-\left(\frac{\delta
 
 La diferencia entre "r" y "s" es despreciable.
 
-*** Proyección Transversa De Mercator. Sistema U.T.M.
+** Proyección Transversa De Mercator. Sistema U.T.M.
 
 El sistema U.T.M. (Universal Transverse Mercator) de la proyección de
 Gauss fue recomendado por la Unión Geodésica y Geofísica Internacional
@@ -892,7 +1015,7 @@ Ambas proyecciones tienen mucho en común, sólo se diferencian en el
 factor de escala, el ancho y numeración de las fajas y el origen de la
 coordenada "x".
 
-**** ESPECIFICACIONES.
+*** Especificaciones.
 
 [[file:img/repslatex-img86.png]]
 
@@ -995,7 +1118,7 @@ argentino se puede encontrar por medio de:
 
 $$FAJA=\frac{\left(75+\lambda_0\right)}{3}$$ (XI.3)
 
-**** TRANSFORMACIÓN DE COORDENADAS GEOGRÁFICAS EN PLANAS.
+*** Transformación de coordenadas geográficas en planas.
 
 El planteo de las expresiones de las coordenadas UTM es similar al de
 las Gauss-Kruger, y es a través de las funciones de variable compleja:
@@ -1066,7 +1189,7 @@ La corrección el arco a la cuerda se obtiene de las (X.41.a) o (X.41.b)
 pero teniendo en cuenta la (XI.7) en las (XI.8) y (XI.9); también se
 introduce el valor de "y" de la (XI.7).
 
-*** Una Expresión Para Ambas Proyecciones.
+** Una Expresión Para Ambas Proyecciones.
 
 En las siguientes expresiones se debe tener en cuenta el signo de la
 latitud y longitud, y son válidas para el hemisferio sur.
