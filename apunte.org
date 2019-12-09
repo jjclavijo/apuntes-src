@@ -1,3 +1,6 @@
+#+LATEX_CLASS: extarticle
+#+LATEX_CLASS_OPTIONS: 11pt
+
 ** Proyección Gauss-Krüger
 
 *** Introducción
@@ -96,9 +99,8 @@ Se puede hallar una aproximación a $G_0$ partiendo de un polinomio de
 taylor de una $G_i$ genérica sobre el meridiano central, poniendo
 condiciones a sus derivadas para que cumplan 1.
 
-::: Apartado
+::: derecha
 *** Apartado: Las condiciones de Cauchy Riemman y conservar los angulos.
-
 
 Supongamos una $f(z) \mathds{C}\rightarrow\mathds{C}$, si expresamos
 la matriz jacobiana en un punto $z_0$ como:
@@ -188,56 +190,45 @@ espacios de origen y destino siendo $$z=q + i l$$ $$u=X+iY,$$ y
 X+iY=f\left(q+il\right)
 \end{equation}
 
-::: apartado
+::: derecha
 
 Si se forma una hipotetica variable compleja $$\varphi +i\lambda$$ no
-se ha elegido la misma unidad lineal para la parte real y la parte
-imaginaria de la variable. Por ejemplo, si se incrementan en 1” la
-latitud y longitud el arco de meridiano es siempre el mismo para
-cualquier latitud y el arco de paralelo disminuye a medida que la
-longitud aumenta.
+se ha elegido la misma escala lineal para la parte real y la parte
+imaginaria de la variable. Por ejemplo, 1” en la
+longitud implica un arco de meridiano similar para
+cualquier latitud y en cambio el arco de paralelo disminuye a medida que la
+latitud aumenta.
 
-Los arcos de meridiano y paralelo en el elipsoide en funcion de las
+Las escalas en el elipsoide en funcion de las
 unidades resultantes son respectivamente:
 
-$$dm=M\cdot d\varphi$$ 
-$$dp=N\cdot cos\left(\varphi \right)\cdot d\lambda$$ 
+$$\|\veco\varphi\|=M$$ 
+$$\|\veco\lambda\|=N\cdot cos\left(\varphi \right)$$ 
 
 En la esfera:
 
-$$dm=R\cdot d\varphi$$
-$$dp=R\cdot cos\left(\varphi \right)\cdot d\lambda$$
+$$\|\veco\varphi\|=R\cdot$$
+$$\|\veco\lambda\|=R\cdot cos\left(\varphi \right)\cdot$$
 
 Por lo tanto el arco de paralelo disminuye de
-acuerdo con el coseno de la latitud. Por ejemplo 1” en el ecuador y a 60
+acuerdo con el coseno de la latitud. Como ejemplo, 1” en el ecuador y a 60
 de latitud le corresponden los siguientes arcos de meridiano y paralelo:
 
-$dm\left(0^{\circ}\right)=30m$
+\begin{align*}
+Sm\left(0^{\circ}\right)&=30m & Sp\left(0^{\circ}\right)&=30m\\
+Sm\left(60^{\circ}\right)&=30m & Sp\left(50^{\circ}\right)&=15m\\
+\end{align*}
 
-$dp\left(0^{\circ}\right)=30m$
-
-$dm\left(60^{\circ}\right)=30m$
-
-$dp\left(50^{\circ}\right)=15m$
-
-Es decir, que sobre la superficie elipsóidica considerada plana, no se
-tienen cuadrados elementales sino rectángulos elementales, por no
-producir el mismo incremento lineal sobre el elipsoide, incrementos
-iguales en latitud y longitud. Si:
+Incrementos iguales en latitud y longitud
 
 $$d\varphi =d\lambda$$
 
-Las unidades lineales en el sentido de la latitud
-y la longitud están en la relación:
+con unidades lineales en el sentido de la latitud
+y la longitud esté en la relación:
 
 $$\frac{dp}{dm}=\frac{M}{N\cdot cos\left(\varphi \right)}$$
 
-Al obtener la parametrización conforme $q,l$, se igualan los arcos
-de meridiano y paralelo, ante un idéntico incremento diferencial:
-
-$$dq=d\lambda$$
-
-Se produzcan iguales incrementos lineales sobre
+Se producirian iguales incrementos lineales sobre
 meridianos y paralelos. Por ejemplo:
 
 $$dq={d\lambda}=1''$$
@@ -567,8 +558,8 @@ prescindir de los términos "n" con potencias superiores a 2,
 considerando que $n < 0.08$, y aún aquellos con $t^4$ o $t^2*n^2$,
 considerando que $t < 0.6$.
 
-::: apartado
-**** La grilla en la carta
+::: derecha
+*La grilla en la carta*
 Conocidas las coordenadas geográficas de los puntos, se calculan las
 coordenadas Gauss-Krüger de los mismos dentro de la faja que
 corresponda.
@@ -715,6 +706,7 @@ $$\frac{d^2q}{dx^2}=\frac{d\left(\frac{dq}{dx}\right)}{{d\varphi}}\frac{{d\varph
 No nos explayaremos aquí sobre el cálculo de cada derivada, sin embargo presentamos 
 las ecuaciones resultantes,
 
+#+NAME: eqn:gkinv
 \begin{align}
 l&= 
 \begin{multlined}[t]
@@ -799,12 +791,16 @@ tg^{5}\left(c\right),$$
 
 que reemplazando en la expresión anterior da
 
-$$c=l\cdot sen\left(\varphi \right)+\frac{l^3}{3}\cdot sen\left(\varphi
+#+NAME: eqn:gkconv
+\begin{equation}
+c=l\cdot sen\left(\varphi \right)+\frac{l^3}{3}\cdot sen\left(\varphi
 \right)\cdot cos^{2}\left(\varphi \right)\cdot \left(1+3\cdot
 n^{2}+2n^{4}\right)+\frac{l^5}{15}\cdot
 sen\left(\varphi \right)\cdot cos^{4}\left(\varphi \right)\cdot
-\left(2-t^{2}\right)$$
+\left(2-t^{2}\right)
+\end{equation}
 
+#+BEGIN_COMMENT
 Si se desea la convergencia en función de las coordenadas planas, se
 realiza el mismo desarrollo pero partiendo de
 
@@ -812,10 +808,16 @@ $$tg(c)=\frac{\partial{\lambda}/\partial{x}}{\partial{\lambda}/\partial{y}},$$
 
 que surge de considerar que el ángulo entre los vectores evaluados es el mismo 
 tanto en el origen como en el destino de la transformación, por ser la misma conforme.
+#+END_COMMENT
 
-Se obteniene
+Si se desea la convergencia en función de las coordenadas planas, se reemplazan los 
+valores de l por los terminos primero o primero y segundo de [[eqn:gkinv]], en el primero
+y los restantes terminos de [[eqn:gkconv]] respectivamente, y aproximando $\varphi = \varphi_1$,
+que en el peor de los casos nos trae un error de $1"$ en la convergencia.
 
-$$d=\frac{y}{N_1}\cdot t_{1}\cdot \left[1-\frac{y^2}{3\cdot
+Se obteniene:
+
+$$c=\frac{y}{N_1}\cdot t_{1}\cdot \left[1-\frac{y^2}{3\cdot
 N_1^2}\cdot \left(1+t_1^2-n_1^2-2\cdot
 n_1^4\right)+\frac{y^4}{N_1^4}\cdot
 {\frac{\left(2+5\cdot t_1^2+3\cdot
@@ -845,28 +847,52 @@ sec\left(c\right)$$
 
 Calculando la derivada desde [[eqn:gkxy]], y sustituyendo el valor de "c", se obtiene:
 
-$$m=1+l^{2}\cdot cos^{2}\left(\varphi
+#+NAME: eqn:gkdef
+\begin{equation}
+m=1+\frac{l^{2}\cdot cos^{2}}{2}\left(\varphi
 \right)\cdot
 \left(1+n^{2}\right)+\frac{l^4\cdot cos^4\left(\varphi
 \right)}{24}\cdot \left(5-t^{2}+14\cdot
 n^{2}-28\cdot t^{2}\cdot
-n^{2}\right)$$ (X.29.a)
+n^{2}\right)
+\end{equation}
 
 Expresión en la cual "l" se introduce en radianes.
 
+#+BEGIN_COMMENT
 Si se desea conocer la deformación lineal en función de las coordenadas
 planas, se puede partir de
 
 \begin{align}
-\frac{1}{m^{2}}&=\frac{\|\veco x\|^2}{\|\vecd x\|^2}\\
-&=\frac{\left(\partial{\lambda}/\partial{x}\right)^2 \|\veco\lambda\|^2 + \left(\partial{\varphi}/\partial{x}\right)^2 \|\veco\varphi\|^2}{1}\\
-m^2 &= \frac{1}{\left(\partial{\lambda}/\partial{x}\right)^2 \left(N\,cos\left(\varphi\right)\right)^2 + \left(\partial{\varphi}/\partial{x}\right)^2 M^2}
+\frac{1}{m^{2}}&=\frac{\|\veco y\|^2}{\|\vecd y\|^2}\\
+&=\frac{\left(\partial{\lambda}/\partial{y}\right)^2 \|\veco\lambda\|^2 + \left(\partial{\varphi}/\partial{y}\right)^2 \|\veco\varphi\|^2}{1}\\
+m^2 &= \frac{1}{\left(\partial{\lambda}/\partial{y}\right)^2 \left(N\,cos\left(\varphi\right)\right)^2 + \left(\partial{\varphi}/\partial{y}\right)^2 M^2}
 \end{align}
 
 Haciendo el desarrollo en serie con respecto de y, desde el meridiano central,
  donde m=1
+ 
+\begin{align}
+m^2 &= \frac{1}{\left(\partial{\lambda}/\partial{y}\right)^2 \left(N\,cos\left(\varphi\right)\right)^2 }
+
+\partial{\lambda}/\partial{y} &= 
+
+\end{align}
+
+
+$$m^* = m(1) + \partial{m} 
 
 Operando se llega a
+#+END_COMMENT
+
+Si se desea obtener la deformación en función de las coordenadas planas, se reemplazan los 
+valores de l por los terminos primero o primero y segundo de [[eqn:gkinv]], en el segundo
+y los restantes terminos de [[eqn:gkdef]] respectivamente, y aproximando $\varphi = \varphi_1$,
+que trae aún menos error que en el caso de la convergencia, dado que el resultado
+depende más débilmente de $\varphi$ en este caso.
+
+El resultado, tomando sólo los primeros 3 términos y considerando en el último de éstos
+que $N/M = M/N = 1$, lo cual es aceptable dado el poco peso de este término, es:
 
 $$m=1+\frac{y^2}{2\cdot R^2}+\frac{y^4}{24\cdot R^4}$$
 
@@ -874,10 +900,14 @@ Donde:
 
 $$R=\sqrt{M_1\cdot N_1}$$ 
 
+, y este es el valor que utilizaremos en las deducciones que siguen.
+
+Para una referencia completa de todos los términos ver [fn:1].
+
 *** Deformaciones lineales.
 
 Cuando se desea conocer la deformación de una distancia finita,
-tendiendo en cuenta que:
+teniendo en cuenta que:
 
 $$m=\frac{dl}{dL}$$ $$L=\overset{{l}}{\underset{{o}}{\int
 }}{\frac{dl}{m}}$$ O bien:
@@ -888,22 +918,53 @@ distancia sobre el elipsoide, "l" es la correspondiente en el plano y
 
 $$L=\overset{{l}}{\underset{{o}}{\int }}{\left(1+\frac{y^2}{2\cdot
 R^2}+\frac{y^4}{24\cdot
-R^2}\right)}^{-1}dl$$ Se desprecia el término de cuarto orden lo cual es
-aceptable hasta unos 3 grados del meridiano central.
+R^2}\right)}^{-1}dl$$ 
+
+El término de cuarto orden puede despreciarse para casi cualquier caso 
+si se trabaja hasta 3 grados apartado del meridiano central, donde representa
+una deformación de solo 1 cm cada 400 km.
 
 $$L=\overset{{l}}{\underset{{o}}{\int }}{\left(1+\frac{y^2}{2\cdot
-R^2}\right)}^{-1}dl$$ O bien desarrollando el binomio:
+R^2}\right)}^{-1}dl$$
 
-$$L=\overset{{l}}{\underset{{o}}{\int }}{\left(1-\frac{y^2}{2\cdot
-R^2}\right)}dl$$
+Luego, si se multiplica y divide por el conjugado:
 
+\begin{align}
+L &=\overset{{l}}{\underset{{o}}{\int }}{\frac{\left(1-\frac{y^2}{2\cdot
+R^2}\right)}{\left(1+\frac{y^2}{2\cdot
+R^2}\right)\left(1-\frac{y^2}{2\cdot
+R^2}\right)}}dl\nonumber \\ 
+L &=\overset{{l}}{\underset{{o}}{\int }}{\frac{\left(1-\frac{y^2}{2\cdot
+R^2}\right)}{\left(1-\frac{y^4}{4\cdot
+R^4}\right)}}dl
+\end{align}
+
+Si se considera que el denominado influye en una deformación de aproximadamente un
+centímetro en 25km a dos grados del MC, podemos decir que es aceptable asumir
+
+#+NAME: eqn:gklinea
+\begin{equation}
+L =\overset{{l}}{\underset{{o}}{\int }}{\left(1-\frac{y^2}{2\cdot
+R^2}\right)}dl
+\end{equation}
+
+::: derecha
 [[file:img/repslatex-img84.png]]
 
-Sea "p" en la figura (X.6) la distancia del elemento "dl" a partir de
-"Q", designando "y1" ordenada del punto Q y por "A" ángulo de dirección
+Sea $p$ en la figura (X.6) la distancia proporcional a $dl$ a partir de
+$Q$, designando $y1$ ordenada del punto Q y por $A$ ángulo de dirección
 o acimut de cuadrícula, se tiene que:
 
-$$y=y_{1}+p\cdot sen\left(A\right)$$ Por lo tanto:
+$$y=y_{1}+p\cdot sen\left(A\right),$$
+
+Nótese que durante este desarrollo estamos considerando que para
+la trayectoria evaluada $sen(A)$ no depende de la
+posición sobre la trayectoria, que es lo mismo que decir que la trayectoria
+recta sobre la carta y la geodésica sobre el elipsoide se corresponden.
+::::::
+
+Considerando la trayectoria plana sobre la carta, podemos expresar [[eqn:gklinea]] 
+como:
 
 $$L=\overset{{p=l}}{\underset{{p=o}}{\int
 }}{\left(1-\frac{\left(y_1+p\cdot
@@ -935,24 +996,30 @@ $$L=l\cdot
 El módulo de deformación de una distancia finita será:
 
 $$\frac{l}{L}=\left[1-\frac{\left(y_1^2+y_1\cdot y_2+y_2^2\right)}{6\cdot R^2}\right]^{-1}$$
-O bien
 
-$$\frac{l}{L}=1+\frac{\left(y_1^2+y_1\cdot
-y_2+y_2^2\right)}{6\cdot R^2}$$ (X.30.a)
+Que puede aproximarse como
 
-Donde:
+#+NAME: eqn:gklineaneta
+\begin{equation}
+\frac{l}{L}=1+\frac{\left(y_1^2+y_1\cdot
+y_2+y_2^2\right)}{6\cdot R^2},
+\end{equation}
 
-$$R=\sqrt{M_1\cdot N_1}$$ ;
+si se hace una consideracion similar a la realizada para obtener [[eqn:gklinea]]
 
-$$\varphi =\frac{\varphi _2+\varphi _1}{2}$$
+En esta ecuación $R=\sqrt{M_1\cdot N_1}$ y $\varphi =\frac{\varphi _2+\varphi _1}{2}$
 
 En algunos casos es suficiente con tomar un valor promedio de la
-coordenada "y", entonces:
+coordenada $y$, obteniendo
+$y_m=\frac{y_2+y_1}{2}$,
+que reemplazando en [[eqn:gklineaneta]] da
 
-$$y_m=\frac{y_2+y_1}{2}$$ Reemplazando en (X.30.a)
+#+NAME: eqn:gklineasimple
+\begin{equation}
+\frac{l}{L}=1+\frac{y_m^2}{2\cdot R^2}
+\end{equation}
 
-$$\frac{l}{L}=1+\frac{y_m^2}{2\cdot R^2}$$ (X.30.b)
-
+* Continuacion :noexport:
 *** Corrección Angular.
 
 En las proyecciones conformes los ángulos y las direcciones se trasladan
@@ -1299,3 +1366,7 @@ radianes.
 
 Para la transformación son necesarias como dato X o N, Y o E, los
 parámetros del elipsoide de referencia.
+
+* Footnotes :noexport:
+
+[fn:1] REDFEARN, J. C. B. Transverse mercator formulae. Empire Survey Review, 1948, vol. 9, no 69, p. 318-322.

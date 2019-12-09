@@ -1,5 +1,16 @@
 \usepackage{dsfont}
 \usepackage{mathtools}
-\usepackage[paperwidth=441pt, paperheight=666pt]{geometry}
+\usepackage{xcolor}
+\usepackage[paperwidth=441pt, paperheight=666pt,margin=20pt]{geometry}
 \newcommand{\veco}[1]{\underline{#1}}
 \newcommand{\vecd}[1]{\hat{\underline{#1}}}
+
+\newsavebox{\selvestebox}
+\newenvironment{derecha}%
+  {\newcommand\colboxcolor{6495ED}%
+   \begin{lrbox}{\selvestebox}%
+   \begin{minipage}{\dimexpr\columnwidth-10\fboxsep\relax}}
+  {\end{minipage}\end{lrbox}%
+   \begin{center}
+   \colorbox[HTML]{\colboxcolor}{\usebox{\selvestebox}}
+   \end{center}}
